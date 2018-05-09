@@ -2,6 +2,8 @@
 
 const express = require('express');
 const app = express();
+const path = require('path');
+const logger = require('morgan');
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
 const cors = require('cors');
@@ -12,6 +14,7 @@ require('./config/database');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(logger('dev'));
 
 const authCheck = jwt({
     secret: jwks.expressJwtSecret({

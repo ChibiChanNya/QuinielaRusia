@@ -12,12 +12,18 @@
     "license": "MIT",
     "dependencies": {
         "async": "^2.6.0",
-        "body-parser": "^1.15.2",
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.18.2",
         "connect-mongodb-session": "^2.0.2",
         "cors": "^2.8.1",
-        "express": "^4.14.0",
+        "express": "^4.16.3",
         "express-jwt": "^3.4.0",
+        "jsonwebtoken": "^8.2.1",
         "jwks-rsa": "^1.1.1",
-        "mongoose": "^5.0.17"
+        "mongoose": "^5.0.17",
+        "morgan": "^1.9.0",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "serve-favicon": "^2.5.0"
     }
 }

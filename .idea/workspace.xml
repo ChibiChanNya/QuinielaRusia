@@ -2,54 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37a324bf-256c-4e36-a420-d1af995ee489" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/.idea/quiniela-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/.postcssrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/check-versions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/vue-loader.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/webpack.base.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/webpack.dev.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/build/webpack.prod.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/config/dev.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/config/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/config/prod.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/AppNav.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/Matches.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/PrivateBattles.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/PublicBattles.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/callback.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/static/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/utils/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/utils/battles-api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/utils/matches-api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/config/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/controllers/userController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/gameprediction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/match.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/payment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/specialprediction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/team.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/alemania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/arabia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/argentina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/australia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/belgica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/brasil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/colombia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/costarica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/croacia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/dinamarca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/egipto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/españa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/francia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/inglaterra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/iran.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/islandia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/japon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/marruecos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/mexico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/nigeria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/panama.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/peru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/polonia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/portugal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/rusia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/scorea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/senegal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/serbia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/suecia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/suiza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/tunisia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos/uruguay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/config/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/config/settings.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/.bin/mime" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/.bin/semver" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/.bin/sshpk-conv" afterDir="false" />
@@ -944,9 +930,6 @@
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/json-stringify-safe/stringify.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/json-stringify-safe/test/mocha.opts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/json-stringify-safe/test/stringify_test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/.jshintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/.travis.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/CHANGELOG.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/LICENSE" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/README.md" afterDir="false" />
@@ -960,29 +943,6 @@
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/node_modules/ms/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/node_modules/ms/readme.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/async_sign.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/encoding.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/expiresInSeconds.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/expires_format.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/invalid_exp.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/invalid_pub.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/issue_147.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/issue_70.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/jwt.hs.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/jwt.rs.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/noTimestamp.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/non_object_values.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/priv.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/pub.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/rsa-private.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/rsa-public-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/rsa-public-key.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/rsa-public.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/set_headers.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/undefined_secretOrPublickey.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/util/fakeDate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/verify.tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsonwebtoken/test/wrong_alg.tests.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsprim/CHANGES.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsprim/CONTRIBUTING.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/jsprim/LICENSE" afterDir="false" />
@@ -2934,12 +2894,13 @@
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/yallist/iterator.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/yallist/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quiniela-project/server/node_modules/yallist/yallist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/seeds/matches.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/seeds/teams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quiniela-project/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/quiniela/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/quiniela/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/quiniela/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiniela-project/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../quiniela-project/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2956,17 +2917,62 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../quiniela-project/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="142">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../quiniela-project/server/config/settings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="passport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../quiniela-project/server/config/passport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teams.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../quiniela-project/server/seeds/teams.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="794">
+              <caret line="109" column="18" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/config/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -2989,35 +2995,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Matches.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/src/components/Matches.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-              <folding>
-                <element signature="e#465#495#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/src/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matches-api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/utils/matches-api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -3044,10 +3029,12 @@
       <find>GRUPO</find>
       <find>&quot;group&quot;</find>
       <find>lint</find>
+      <find>VAR</find>
     </findStrings>
     <replaceStrings>
       <replace>),</replace>
       <replace>group</replace>
+      <replace>let</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../quiniela-project</dir>
@@ -3055,6 +3042,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../quiniela-project" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../quiniela-project" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -3071,7 +3063,6 @@
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/utils/battles-api.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/server/routes/users.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/server/controllers/userController.js" />
-        <option value="$PROJECT_DIR$/../quiniela-project/server/models/user.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/server/models/team.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/server/models/specialprediction.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/server/models/payment.js" />
@@ -3083,9 +3074,12 @@
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/utils/matches-api.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/src/components/matches.vue" />
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/src/router/index.js" />
-        <option value="$PROJECT_DIR$/../quiniela-project/server/server.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/src/main.js" />
         <option value="$PROJECT_DIR$/../quiniela-project/quiniela/config/index.js" />
+        <option value="$PROJECT_DIR$/../quiniela-project/server/server.js" />
+        <option value="$PROJECT_DIR$/../quiniela-project/server/config/settings.js" />
+        <option value="$PROJECT_DIR$/../quiniela-project/server/config/passport.js" />
+        <option value="$PROJECT_DIR$/../quiniela-project/server/models/user.js" />
       </list>
     </option>
   </component>
@@ -3127,12 +3121,6 @@
               <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
               <item name="quiniela" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="quiniela" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -3141,6 +3129,14 @@
               <item name="quiniela" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
+              <item name="quiniela" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="logos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
@@ -3162,41 +3158,6 @@
               <item name="quiniela" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quiniela-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quiniela-project" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -3214,6 +3175,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../quiniela-project/quiniela/src/assets/logos" />
       <recent name="$PROJECT_DIR$/../quiniela-project/quiniela/utils" />
       <recent name="$PROJECT_DIR$/../quiniela-project/server/config" />
       <recent name="$PROJECT_DIR$/../quiniela-project/quiniela/src/components" />
@@ -3241,12 +3203,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525714763662</updated>
-      <workItem from="1525714764908" duration="13320000" />
+      <workItem from="1525714764908" duration="14438000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial COmmit">
+      <created>1525896040275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525896040276</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13320000" />
+    <option name="totallyTimeSpent" value="14438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -3275,6 +3245,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial COmmit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial COmmit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/src/components/HelloWorld.vue">
@@ -3334,9 +3308,6 @@
     <entry file="file://$PROJECT_DIR$/../quiniela-project/server/controllers/userController.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/payment.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -3351,20 +3322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/seeds/teams.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -3395,7 +3352,7 @@
     <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/utils/matches-api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -3412,7 +3369,7 @@
     <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
@@ -3474,17 +3431,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../quiniela-project/quiniela/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/config/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/models/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quiniela-project/server/seeds/teams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="109" column="18" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="18" />
         </state>
       </provider>
     </entry>
