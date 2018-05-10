@@ -1,39 +1,15 @@
 import decode from 'jwt-decode';
-import axios from 'axios';
-import auth0 from 'auth0-js';
-import Router from 'vue-router';
-import Auth0Lock from 'auth0-lock';
-const ID_TOKEN_KEY = 'id_token';
-const ACCESS_TOKEN_KEY = 'access_token';
+import Router from '../src/router/index.js';
+const BASE_URL = 'http://localhost:3333';
 
-const CLIENT_ID = 'aQtWg0Hj8LteSErCD2badbYJAWAeQ4Io';
-const CLIENT_DOMAIN = 'chibi.auth0.com/';
-const REDIRECT = 'http://localhost:8080/callback';
-const SCOPE = 'full_access';
-const AUDIENCE = 'quiniela-rusia';
-
-var auth = new auth0.WebAuth({
-  clientID: CLIENT_ID,
-  domain: CLIENT_DOMAIN
-});
 
 export function login() {
-  auth.authorize({
-    responseType: 'token id_token',
-    redirectUri: REDIRECT,
-    audience: AUDIENCE,
-    scope: SCOPE
-  });
+  move('Login')
 }
 
-var router = new Router({
-  mode: 'history',
-});
-
 export function logout() {
-  clearIdToken();
-  clearAccessToken();
-  router.go('/');
+  localStorage.removeItem('jwtToken');
+  move('/')
 }
 
 export function requireAuth(to, from, next) {
@@ -47,21 +23,21 @@ export function requireAuth(to, from, next) {
   }
 }
 
-export function getIdToken() {
-  return localStorage.getItem(ID_TOKEN_KEY);
+function move(name){
+  Router.push({
+    name: name
+  })
 }
 
-export function getAccessToken() {
-  return localStorage.getItem(ACCESS_TOKEN_KEY);
+
+export function getToken(){
+  return localStorage.getItem('jwtToken');
 }
 
-function clearIdToken() {
-  localStorage.removeItem(ID_TOKEN_KEY);
+export function start_auth(provider){
+  return BASE_URL + '/api/auth/' + provider + '/start'
 }
 
-function clearAccessToken() {
-  localStorage.removeItem(ACCESS_TOKEN_KEY);
-}
 
 // Helper function that will allow us to extract the access_token and id_token
 function getParameterByName(name) {
@@ -69,20 +45,8 @@ function getParameterByName(name) {
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-// Get and store access_token in local storage
-export function setAccessToken() {
-  let accessToken = getParameterByName('access_token');
-  localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
-}
-
-// Get and store id_token in local storage
-export function setIdToken() {
-  let idToken = getParameterByName('id_token');
-  localStorage.setItem(ID_TOKEN_KEY, idToken);
-}
-
 export function isLoggedIn() {
-  const idToken = getIdToken();
+  const idToken = getToken();
   return !!idToken && !isTokenExpired(idToken);
 }
 

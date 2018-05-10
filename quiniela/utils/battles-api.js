@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAccessToken } from './auth';
+import { getToken } from './auth';
 
 const BASE_URL = 'http://localhost:3333';
 
@@ -12,4 +12,13 @@ function getPublicStartupBattles() {
 
 function getPrivateStartupBattles() {
   const url = `${BASE_URL}/api/battles/private`;
-  return axios.get(url, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data);}
+  return axios.get(url, {headers: {Authorization: getToken()}}).then(response => response.data)
+    .catch(e => {
+      this.errors.push(e);
+      if (e.response.status === 401) {
+        this.$router.push({
+          name: 'Login'
+        })
+      }
+    });
+}
