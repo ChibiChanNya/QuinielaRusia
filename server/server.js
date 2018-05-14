@@ -1,7 +1,6 @@
 'use strict';
 require('dotenv').config();
 const express = require('express');
-const exphbs  = require('express-handlebars');
 const app = express();
 const logger = require('morgan');
 const jwt = require('express-jwt');
@@ -15,17 +14,19 @@ let auth = require('./routes/auth');
 let passport = require('passport');
 app.use(passport.initialize());
 
+require('./config/jwt');
+
 //Import static data
 const data = require('./data');
+
+//Import Controller to use here
+const PaymentsController = require('./controllers/paymentsController');
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(logger('dev'));
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
 
 // Function to check auth tokens
 let getToken = function (headers) {
@@ -60,28 +61,21 @@ app.get('/api/battles/public', (req, res) => {
 
 app.get('/api/matches/all',passport.authenticate('jwt', { session: false}), (req, res)=> {
     let matches= data.matches;
-    let token = getToken(req.headers);
-
-    if (token) {
-        res.json(matches);
-    }
-    else {
-        return res.status(403).send({success: false, msg: 'Unauthorized.'});
-    }
+    res.json(matches);
 });
 
 app.get('/api/battles/private', passport.authenticate('jwt', { session: false}), (req,res) => {
     let privateBattles = data.private_battles;
-
-    let token = getToken(req.headers);
-    if (token) {
-        res.json(privateBattles);
-    }
-    else {
-        return res.status(403).send({success: false, msg: 'Unauthorized.'});
-    }
-
+    res.json(privateBattles);
 });
+
+app.get('/api/battles/private', passport.authenticate('jwt', { session: false}), (req,res) => {
+    let privateBattles = data.private_battles;
+    res.json(privateBattles);
+});
+
+app.post('/api/payment', PaymentsController.checkoutPaypal);
+
 
 app.listen(3333);
 console.log('Listening on localhost:3333');

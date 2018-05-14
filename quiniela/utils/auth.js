@@ -4,13 +4,15 @@ const BASE_URL = 'http://localhost:3333';
 
 
 export function login() {
-  move('Login')
-}
+  Router.push({
+    name: 'Login'
+  })}
 
 export function logout() {
   localStorage.removeItem('jwtToken');
-  move('/')
-}
+  Router.push({
+    name: 'PublicBattles'
+  })}
 
 export function requireAuth(to, from, next) {
   if (!isLoggedIn()) {
@@ -21,12 +23,6 @@ export function requireAuth(to, from, next) {
   } else {
     next();
   }
-}
-
-function move(name){
-  Router.push({
-    name: name
-  })
 }
 
 

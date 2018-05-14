@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getToken } from './auth';
+import Router from '../src/router/index.js';
 
 const BASE_URL = 'http://localhost:3333';
 
@@ -14,9 +15,10 @@ function getPrivateStartupBattles() {
   const url = `${BASE_URL}/api/battles/private`;
   return axios.get(url, {headers: {Authorization: getToken()}}).then(response => response.data)
     .catch(e => {
-      this.errors.push(e);
+      console.log(e);
       if (e.response.status === 401) {
-        this.$router.push({
+        console.log("BEEP failed permission");
+        Router.push({
           name: 'Login'
         })
       }

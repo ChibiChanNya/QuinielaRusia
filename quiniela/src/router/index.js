@@ -4,7 +4,7 @@ import PrivateBattles from '@/components/privateBattles';
 import PublicBattles from '@/components/publicBattles';
 import Matches from '@/components/matches';
 import Login from '@/components/Login'
-import Register from '@/components/Register'
+import HelloWorld from '@/components/HelloWorld'
 
 
 Vue.use(Router);
@@ -31,6 +31,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/authenticated',
+      name: 'authenticated',
+      component: HelloWorld
     },
   ],
 });

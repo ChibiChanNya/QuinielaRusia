@@ -4,20 +4,17 @@
     <h3 class="text-center">Tabla de Predicciones</h3>
     <hr/>
 
-    <div class="row" v-for="match in matches">
-      <span class="match-time">{{match.date}} {{match.time}}</span>
-      <span>{{match.local_team}}</span>
-      <span class="score"><input type="number"> - <input type="number"> </span>
-      <span>{{match.visitor_team}}</span>
-      <span class="location">{{match.location}}</span>
-    </div>
+    <!--<div class="row" v-for="match in matches">-->
+      <!--<span class="match-time">{{match.date}} {{match.time}}</span>-->
+      <!--<span>{{match.local_team}}</span>-->
+      <!--<span class="score"><input type="number"> - <input type="number"> </span>-->
+      <!--<span>{{match.visitor_team}}</span>-->
+      <!--<span class="location">{{match.location}}</span>-->
+    <!--</div>-->
 
-    <div class="col-sm-12">
-      <div class="jumbotron text-center">
-        <h2>View Public Startup Battles</h2>
-        <router-link class="btn btn-lg btn-success" to="/"> Public Startup Battles </router-link>
-      </div>
-    </div>
+    <paypal v-if="!premium"></paypal>
+    <button v-if="premium" class="btn btn-success">Actualizar Quiniela </button>
+
   </div>
 </template>
 
@@ -25,17 +22,21 @@
   import AppNav from './AppNav';
   import { isLoggedIn } from '../../utils/auth';
   import { getMatches } from '../../utils/matches-api';
+  import Paypal from './Paypal'
 
   export default {
     name: 'Matches',
     components: {
       AppNav,
+      'paypal': Paypal
     },
     data() {
       return {
         matches: '',
+        premium: localStorage.getItem('has_paid')
       };
     },
+
     methods: {
       isLoggedIn() {
         return isLoggedIn();
@@ -46,6 +47,7 @@
         });
       },
     },
+
     mounted() {
       this.getMatches();
     },

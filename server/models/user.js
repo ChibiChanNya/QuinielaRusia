@@ -29,11 +29,12 @@ let UserSchema = new Schema({
         email:{
             type: String,
             required: true,
-        }
+        },
     },
     profile:{
         display_name: {type: String},
-        display_pic: {type: String}
+        display_pic: {type: String},
+        has_paid : {type: Boolean, default: false},
     },
 
     points: {type: Number, default: 0},

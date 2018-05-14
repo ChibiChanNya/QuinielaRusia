@@ -1,9 +1,6 @@
 const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const User = require('../models/user');
-require('./google');
-require('./facebook');
-
 
 const jwtOptions = {
     // Get the JWT from the "Authorization" header.
@@ -18,7 +15,12 @@ const jwtOptions = {
 };
 
 passport.use(new passportJwt.Strategy(jwtOptions, (payload, done) => {
-    User.findOne({id: parseInt(payload.sub)}, function(user){
+    console.log("PAYLOAD",payload);
+    User.findOne({_id:payload.sub}, function(err, user){
+        if(err) {
+            console.log(err);
+            return done();
+        }
         if (user) {
             return done(null, user, payload);
         }

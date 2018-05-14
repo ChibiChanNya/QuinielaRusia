@@ -44,7 +44,7 @@ router.post('/login', function(req, res) {
                     // if user is found and password is right create a token
                     var token = jwt.sign(user.toJSON(), settings.secret);
                     // return the information including token as JSON
-                    res.json({success: true, token: 'JWT ' + token});
+                    res.json({success: true, token: "JWT "+token});
                 } else {
                     res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
                 }
@@ -54,12 +54,9 @@ router.post('/login', function(req, res) {
 });
 
 function generateUserToken(req, res) {
-    console.log("GENERATING NEW TOKEN", req.user._id);
+    console.log("GENERATING NEW TOKEN", req.user);
     const accessToken = token.generateAccessToken(req.user._id);
-    res.render('authenticated', {
-        success: true,
-        token: 'JWT ' + accessToken
-    });
+    res.redirect('http://localhost:8080/authenticated?token=JWT ' + accessToken+'&user_id='+req.user._id+'&has_paid='+req.user.has_paid);
 }
 
 router.get('/google/start',
