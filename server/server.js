@@ -74,6 +74,13 @@ app.get('/api/battles/private', passport.authenticate('jwt', { session: false}),
     res.json(privateBattles);
 });
 
+app.post('/api/matches/save', passport.authenticate('jwt', { session: false}), (req, res)=> {
+    let matches= req.body.matches;
+    let user_id = req.body.user_id;
+    console.log("Got prediction", matches, user_id);
+    res.sendStatus(200);
+});
+
 app.post('/api/payment', PaymentsController.checkoutPaypal);
 
 

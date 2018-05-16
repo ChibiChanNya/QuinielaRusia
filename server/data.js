@@ -170,7 +170,7 @@ module.exports = {
             time: "5:00",
             location: "Kazán",
             type: "Regular",
-            group: "B"
+            group: "C"
         },
         {
             match_id: "6",

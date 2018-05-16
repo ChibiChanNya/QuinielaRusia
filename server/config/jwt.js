@@ -15,7 +15,7 @@ const jwtOptions = {
 };
 
 passport.use(new passportJwt.Strategy(jwtOptions, (payload, done) => {
-    console.log("PAYLOAD",payload);
+    // console.log("PAYLOAD",payload);
     User.findOne({_id:payload.sub}, function(err, user){
         if(err) {
             console.log(err);
