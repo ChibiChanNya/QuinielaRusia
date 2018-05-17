@@ -3,7 +3,7 @@ import { getToken } from './auth';
 
 const BASE_URL = 'http://localhost:3333';
 
-export {getMatches, getPredictions, savePredictions};
+export {getMatches, getPredictions, savePredictions, getTeams};
 
 function getMatches() {
   const url = `${BASE_URL}/api/matches/all`;
@@ -17,6 +17,11 @@ function getMatches() {
         })
       }
     });
+}
+
+function getTeams() {
+  const url = `${BASE_URL}/api/teams`;
+  return axios.get(url).then(response => response.data);
 }
 
 function getPredictions() {
@@ -35,7 +40,7 @@ function getPredictions() {
 
 function savePredictions(matches, userId){
   const url = `${BASE_URL}/api/matches/save`;
-  return axios.post(url, {matches:matches, user: userId}, {headers: {Authorization: getToken()}}).then(response => response.data)
+  return axios.post(url, {matches:matches, user_id: userId}, {headers: {Authorization: getToken()}}).then(response => response.data)
     .catch(e => {
       console.log(e);
       if (e.response.status === 401) {

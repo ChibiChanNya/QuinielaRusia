@@ -782,6 +782,164 @@ module.exports = {
             type: "",
             group: ""
         },
-    ]
+    ],
+    "teams": [
+        //Manuales
+        { name: 'Rusia',
+            logo: '/images/logos/rusia.jpg',
+            group: "A"
+        },
+        { name: 'Arabia Saudita',
+            logo: '/images/logos/arabia.jpg',
+            group : "A"
+        },
+        { name: 'Egipto',
+            logo: '/images/logos/egipto.jpg',
+            group : "A"
+        },
+        { name: 'Uruguay',
+            logo: '/images/logos/uruguay.jpg',
+            group : "A"
+        },
+
+        { name: 'Marruecos',
+            logo: '/images/logos/marruecos.jpg',
+            group : "B"
+
+        },
+        { name: 'Irán',
+            logo: '/images/logos/iran.jpg',
+            group : "B"
+        },
+        { name: 'Portugal',
+            logo: '/images/logos/portugal.jpg',
+            group : "B"
+        },
+        { name: 'España',
+            logo: '/images/logos/españa.jpg',
+            group : "B"
+        },
+
+        { name: 'Francia',
+            logo: '/images/logos/francia.jpg',
+            group : "C"
+
+        },
+        { name: 'Australia',
+            logo: '/images/logos/australia.jpg',
+            group : "C"
+
+        },
+        { name: 'Argentina',
+            logo: '/images/logos/argentina.jpg',
+            group : "D"
+
+        },
+        { name: 'Islandia',
+            logo: '/images/logos/islandia.jpg',
+            group : "D"
+
+        },
+        { name: 'Perú',
+            logo: '/images/logos/peru.jpg',
+            group : "C"
+
+        },
+        { name: 'Dinamarca',
+            logo: '/images/logos/dinamarca.jpg',
+            group : "C"
+
+        },
+        { name: 'Croacia',
+            logo: '/images/logos/croacia.jpg',
+            group : "D"
+
+        },
+        { name: 'Nigeria',
+            logo: '/images/logos/nigeria.jpg',
+            group : "D"
+
+        },
+        { name: 'Costa Rica',
+            logo: '/images/logos/costarica.jpg',
+            group : "E"
+
+        },
+        { name: 'Serbia',
+            logo: '/images/logos/serbia.jpg',
+            group : "E"
+
+        },
+        { name: 'Alemania',
+            logo: '/images/logos/alemania.jpg',
+            group : "F"
+
+        },
+        { name: 'México',
+            logo: '/images/logos/mexico.jpg',
+            group : "F"
+
+        },
+        { name: 'Brasil',
+            logo: '/images/logos/brasil.jpg',
+            group : "E"
+
+        },
+        { name: 'Suiza',
+            logo: '/images/logos/suiza.jpg',
+            group : "E"
+        },
+        { name: 'Suecia',
+            logo: '/images/logos/suecia.jpg',
+            group : "F"
+
+        },
+        { name: 'Corea del Sur',
+            logo: '/images/logos/scorea.jpg',
+            group : "F"
+
+        },
+        { name: 'Bélgica',
+            logo: '/images/logos/belgica.jpg',
+            group : "G"
+
+        },
+        { name: 'Panamá',
+            logo: '/images/logos/panama.jpg',
+            group : "G"
+
+        },
+        { name: 'Túnez',
+            logo: '/images/logos/tunez.jpg',
+            group : "G"
+
+        },
+        { name: 'Inglaterra',
+            logo: '/images/logos/inglaterra.jpg',
+            group : "G"
+
+        },
+        { name: 'Colombia',
+            logo: '/images/logos/colombia.jpg',
+            group : "H"
+
+        },
+        { name: 'Japón',
+            logo: '/images/logos/japon.jpg',
+            group : "H"
+
+        },
+        { name: 'Polonia',
+            logo: '/images/logos/polonia.jpg',
+            group : "H"
+
+        },
+        { name: 'Senegal',
+            logo: '/images/logos/senegal.jpg',
+            group : "H"
+
+        },
+
+    ],
 
 };

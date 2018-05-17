@@ -51,4 +51,8 @@
     color:red;
   }
 
+  input{
+    max-width: 100px;
+  }
+
 </style>

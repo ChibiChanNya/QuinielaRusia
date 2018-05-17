@@ -45,6 +45,9 @@ let getToken = function (headers) {
 
 // Import Routes
 let users = require('./routes/users');
+let User = require('./models/user');
+let Prediction = require('./models/gameprediction');
+
 
 // API to handle Users
 // app.use('/api/users', users);
@@ -57,6 +60,11 @@ app.get('/api/battles/public', (req, res) => {
     let publicBattles = data.public_battles;
 
     res.json(publicBattles);
+});
+
+app.get('/api/teams', (req, res) => {
+    let teams = data.teams;
+    res.json(teams);
 });
 
 app.get('/api/matches/all',passport.authenticate('jwt', { session: false}), (req, res)=> {
@@ -77,8 +85,35 @@ app.get('/api/battles/private', passport.authenticate('jwt', { session: false}),
 app.post('/api/matches/save', passport.authenticate('jwt', { session: false}), (req, res)=> {
     let matches= req.body.matches;
     let user_id = req.body.user_id;
-    console.log("Got prediction", matches, user_id);
-    res.sendStatus(200);
+    // console.log("Got prediction", user_id);
+    // console.log(req);
+    User.findOne({_id: user_id}, function(err, user){
+        if(err){
+            console.log("error finding useer",err);
+        }
+        else{
+            if(!user){
+                console.log("User not found!!!",err);
+                return;
+            }
+            Prediction.find({user: user}).remove( function(err,deleted){
+
+                let promises = matches.map((match)=>{
+                    return Prediction.create({
+                        user: user_id,
+                        match: match.match_id,
+                        localScore: match.localScore,
+                        visitorScore: match.visitorScore
+                    });
+                });
+                Promise.all(promises).then(function(results){
+                    res.sendStatus(200);
+                });
+            });
+
+
+        }
+    });
 });
 
 app.post('/api/payment', PaymentsController.checkoutPaypal);
