@@ -55,7 +55,7 @@ fabric.properties
 
 # IntelliJ project files
 .idea
-.idea/*
+.idea/workspace.xml
 *.iml
 out
 gen
