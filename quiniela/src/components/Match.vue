@@ -3,7 +3,7 @@
     <div class="col-xs-4">
       <img class="flag" v-bind:src='local_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='local',loser: winner ==='visitor'}">{{matchModel.local_team}}</span><br>
-      <span class="score"><input v-model="matchModel.localScore" type="number"></span>
+      <span class="score"><input min="0" max="99" v-model="matchModel.localScore" type="number"></span>
     </div>
     <div class="col-xs-4 date-location">
       <div >{{matchModel.date}}-2018</div>
@@ -13,7 +13,7 @@
     <div class="col-xs-4">
       <img class="flag" v-bind:src='visitor_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='visitor',loser: winner ==='local'}">{{matchModel.visitor_team}}</span><br>
-      <span class="score"><input v-model="matchModel.visitorScore" type="number"></span>
+      <span class="score"><input min="0" max="99" v-model="matchModel.visitorScore" type="number"></span>
     </div>
   </div>
 </template>

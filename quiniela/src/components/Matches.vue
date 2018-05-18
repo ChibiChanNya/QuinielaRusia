@@ -334,6 +334,7 @@
         <tab name="8vos" v-if="octavos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
+              <span class="warning">Se toma el resultado final, después de penales.</span>
               <component :is="octavos_ready"
                          v-for="match in finals.octavos"
                          :key="match.id"
@@ -347,6 +348,7 @@
         <tab name="4tos" v-if="cuartos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
+              <span class="warning">Se toma el resultado final, después de penales.</span>
               <component :is="cuartos_ready"
                          v-for="match in finals.cuartos"
                          :key="match.id"
@@ -360,6 +362,7 @@
         <tab name="Semis" v-if="semis_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
+              <span class="warning">Se toma el resultado final, después de penales.</span>
               <component :is="semis_ready"
                          v-for="match in finals.semifinales"
                          :key="match.id"
@@ -373,6 +376,7 @@
         <tab name="Final" v-if="final_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
+              <span class="warning">Se toma el resultado final, después de penales.</span>
               <component :is="final_ready"
                          v-for="match in finals.final"
                          :key="match.id"
@@ -874,6 +878,11 @@
     display: inline;
     width: 150px;
     padding: 8px 30px 3px 30px;
+  }
+
+  .warning{
+    color:red;
+    font-size: 1.5em;
   }
 
 </style>
