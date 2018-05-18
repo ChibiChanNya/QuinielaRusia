@@ -12,16 +12,18 @@ export default {
     }
   },
   methods:{
-    printToken(){
+    authenticate(){
       let token=this.$route.query.token;
       let user_id =this.$route.query.user_id;
       let has_paid = this.$route.query.has_paid;
-      window.opener.authenticateCallback(token, user_id, has_paid);
-      window.close();
+      localStorage.setItem('jwtToken', token);
+      localStorage.setItem('user_id', user_id);
+      localStorage.setItem('has_paid', has_paid);
+      document.location.href = '/matches'
     }
   },
   mounted() {
-    this.printToken();
+    this.authenticate();
   },
 }
 
