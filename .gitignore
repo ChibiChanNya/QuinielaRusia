@@ -63,3 +63,4 @@ gen
 # Node
 server/node_modules
 quiniela/node_modules
+server/.env
