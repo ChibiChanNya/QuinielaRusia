@@ -21,12 +21,10 @@ if (passportConfig.clientID) {
                 User.create({
                     auth:{
                         facebook_id: profile.id,
-                        email: profile.emails[0].value,
                         provider: "facebook",
                     },
                     profile:{
                         display_name: profile.displayName,
-                        display_picture: profile.photos[0].value
                     }
                 }, function(err, user){
                     console.log("Finished creating USER", user);
