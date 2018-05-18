@@ -84,14 +84,24 @@
     max-width: 200px;
   }
 
-  .btn.btn-join{
-    font-size: 2em;
+
+  .btn.btn-join {
+    font-size: 1.3em;
     color: white;
     background-image: url("../assets/Home/btn-join.png");
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 12px 0px 12px;
   }
+
+  @media (min-width: 700px) {
+    .btn.btn-join{
+      margin: 10px 0;
+      font-size: 2em;
+      padding: 0px 20px 0px 20px;
+    }
+  }
+
 
   .asterisk{
     font-size: 1em;
