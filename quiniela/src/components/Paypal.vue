@@ -27,7 +27,7 @@
     methods: {
       sendDataPaypal(data) {
         return new Promise((resolve, reject) => {
-            axios.post('http://quinielasports.com/api/payment', data)
+            axios.post('https://quinielasports.com/api/payment', data)
               .then((res) => resolve()).catch((err) => {
               return reject(err)
             })

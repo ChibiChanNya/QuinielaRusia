@@ -6,7 +6,7 @@ const User = require('../models/user');
 const passportConfig = {
     clientID: process.env.GOOGLE_CLIENTID,
     clientSecret: process.env.GOOGLE_CLIENTSECRET,
-    callbackURL: 'http://quinielasports.com/api/auth/google/redirect'
+    callbackURL: 'https://quinielasports.com/api/auth/google/redirect'
 };
 
 if (passportConfig.clientID) {

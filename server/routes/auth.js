@@ -56,7 +56,7 @@ router.post('/login', function(req, res) {
 function generateUserToken(req, res) {
     console.log("GENERATING NEW TOKEN", req.user);
     const accessToken = token.generateAccessToken(req.user._id);
-    res.redirect('http://quinielasports.com/authenticated?token=JWT ' + accessToken+'&user_id='+req.user._id+'&has_paid='+req.user.profile.has_paid);
+    res.redirect('https://quinielasports.com/authenticated?token=JWT ' + accessToken+'&user_id='+req.user._id+'&has_paid='+req.user.profile.has_paid);
 }
 
 router.get('/google/start',
