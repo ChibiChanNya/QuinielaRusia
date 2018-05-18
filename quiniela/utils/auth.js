@@ -1,6 +1,6 @@
 import decode from 'jwt-decode';
 import Router from '../src/router/index.js';
-const BASE_URL = 'https://quinielasports.com';
+const BASE_URL = process.env.SERVER_URL;
 
 
 export function login() {

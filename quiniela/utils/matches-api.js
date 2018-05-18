@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './auth';
 import Router from '../src/router/index.js';
 
-const BASE_URL = 'https://quinielasports.com';
+const BASE_URL = process.env.SERVER_URL;
 
 export {getMatches, getPredictions, savePredictions, getTeams};
 

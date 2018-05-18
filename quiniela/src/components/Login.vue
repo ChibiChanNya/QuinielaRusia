@@ -48,7 +48,7 @@
     methods: {
       onSubmit(evt) {
         evt.preventDefault();
-        axios.post(`https://quinielasports.com/api/auth/login/`, this.login)
+        axios.post(process.env.SERVER_URL+`/api/auth/login/`, this.login)
           .then(response => {
             localStorage.setItem('jwtToken', response.data.token);
             this.$router.push({
