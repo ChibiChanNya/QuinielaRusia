@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Matches from '@/components/matches';
+import Matches from '@/components/Matches';
 import Login from '@/components/Login'
 import Authenticated from '@/components/Authenticated'
 import Home from '@/components/Home'

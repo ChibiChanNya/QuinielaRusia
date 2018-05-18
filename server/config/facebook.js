@@ -6,7 +6,7 @@ const User = require('../models/user');
 const passportConfig = {
     clientID: process.env.FACEBOOK_CLIENTID,
     clientSecret: process.env.FACEBOOK_CLIENTSECRET,
-    callbackURL: 'http://quinielasports.com:3333/api/auth/facebook/redirect'
+    callbackURL: 'http://quinielasports.com/api/auth/facebook/redirect'
 };
 
 if (passportConfig.clientID) {

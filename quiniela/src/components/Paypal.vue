@@ -27,7 +27,7 @@
     methods: {
       sendDataPaypal(data) {
         return new Promise((resolve, reject) => {
-            axios.post('http://quinielasports.com:3333/api/payment', data)
+            axios.post('http://quinielasports.com/api/payment', data)
               .then((res) => resolve()).catch((err) => {
               return reject(err)
             })
@@ -65,7 +65,7 @@
             ],
             "note_to_payer": "Ponte en contacto con nosotros si tienes alguna duda",
             // "redirect_urls": {
-            //   "return_url": "http://localhost:3333/redirect",
+            //   "return_url": "http://localhost/redirect",
             //   "cancel_url": "https://localhost:8080/#/cancel"
             // }
           }

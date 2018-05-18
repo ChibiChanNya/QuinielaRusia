@@ -1,6 +1,6 @@
 import decode from 'jwt-decode';
 import Router from '../src/router/index.js';
-const BASE_URL = 'http://quinielasports.com:3333';
+const BASE_URL = 'http://quinielasports.com';
 
 
 export function login() {
