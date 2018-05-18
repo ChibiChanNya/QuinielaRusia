@@ -14,7 +14,7 @@
           <br>
           <br>
           <b-button type="button" id="facebookBtn" variant="success" @click.stop="social_login('facebook')">
-            <img src="http://clubdefundraising.com/wp-content/uploads/2016/04/facebook-logo_small_sw.png"
+            <img src="../assets/Home/fb-logo.png"
                  class="fb-icon">
             <span class="label buttonText">Iniciar Sesión con Facebook</span>
           </b-button>
@@ -117,7 +117,7 @@
   }
 
   span.g-icon {
-    background: url('https://google-developers.appspot.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+    background: url('../assets/Home/g-logo.png') transparent 5px 50% no-repeat;
     display: inline-block;
     vertical-align: middle;
     width: 42px;
