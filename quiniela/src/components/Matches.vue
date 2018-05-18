@@ -1,12 +1,18 @@
 <template>
   <div id="matches">
+    <ModalRules v-if="showModal" @close="showModal = false"></ModalRules>
+
     <div class="header">
       <router-link to="/"><img  src="../assets/Interna/logo-blanco.png"></router-link>
     </div>
     <div class="header-russia">
       <img class="img-fluid" style="padding:10px" src="../assets/Interna/russia.png">
     </div>
-    <h1 class="russia-bage">Partidos</h1>
+    <div style="margin-bottom: 3em">
+      <h1 class="russia-badge rules" id="show-modal" @click="showModal = true"><span>Ver esquema de Puntos</span></h1>
+    </div>
+    <h1 class="russia-badge"><span>Grupos</span></h1>
+
     <div>
       <tabs >
         <!-- GRUPO A-->
@@ -22,7 +28,8 @@
             </div>
 
             <div class="offset-md-3 col-md-6 col-xs-12 offset-xs-0 table" id="resultsA">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -61,7 +68,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsB">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -100,7 +107,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsC">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -141,7 +148,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsD">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -182,7 +189,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsE">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -223,7 +230,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsF">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -264,7 +271,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsG">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -304,7 +311,7 @@
             </div>
 
             <div class="offset-md-3 col-md-6 table" id="resultsH">
-              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
+              <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
                   <th></th>
@@ -392,7 +399,7 @@
 
     <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
     <!--<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>-->
-    <button v-if="premium"  @click.stop="saveChanges()" class="btn btn-lg btn-success">Actualizar Quiniela</button>
+    <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
     <!--<button  @click.stop="clear()" class="btn btn-lg btn-success">CLEAR</button>-->
 
     <img src="../assets/Footer/separador.png" style="max-width: 100vw">
@@ -407,6 +414,8 @@
   import Paypal from './Paypal'
   import Footer from './Footer'
   import Match from './Match'
+  import ModalRules from './ModalRules'
+
 
 
   export default {
@@ -415,13 +424,17 @@
       Match,
       Footer,
       // AppNav,
-      'paypal': Paypal
+      'paypal': Paypal,
+      ModalRules
     },
 
     data() {
       return {
+
+        showModal:false,
+
         premium: localStorage.getItem('has_paid') === "true",
-        loading: true,
+        loading: false,
         matches: null,
 
         groupA: [],
@@ -612,7 +625,6 @@
           if(m.visitorScore == null)
             m.visitorScore= 0;
         });
-        this.loading = false;
         this.matches = response;
         this.setGroups(response);
       },
@@ -785,21 +797,94 @@
       },
 
       save: function(){
+
+        this.loading = true;
         let matches = this.matches.map((m)=>{
           return {
             match_id: m.match_id,
             localScore: m.localScore,
             visitorScore: m.visitorScore,
             winner: this.get_winner(m)
-          }
-        }, this);
-        savePredictions(matches, localStorage.getItem('user_id')).then((response) => {
+            }
+          }, this);
+
+       let orderA={
+         group: "A",
+         first_place: this.results.groupA[0].name,
+         second_place: this.results.groupA[1].name,
+         third_place: this.results.groupA[2].name,
+         fourth_place: this.results.groupA[3].name,
+       };
+        let orderB={
+          group: "B",
+          first_place: this.results.groupB[0].name,
+          second_place: this.results.groupB[1].name,
+          third_place: this.results.groupB[2].name,
+          fourth_place: this.results.groupB[3].name,
+
+        };
+        let orderC={
+          group: "C",
+          first_place: this.results.groupC[0].name,
+          second_place: this.results.groupC[1].name,
+          third_place: this.results.groupC[2].name,
+          fourth_place: this.results.groupC[3].name,
+
+        };
+        let orderD={
+          group: "D",
+          first_place: this.results.groupD[0].name,
+          second_place: this.results.groupD[1].name,
+          third_place: this.results.groupD[2].name,
+          fourth_place: this.results.groupD[3].name,
+
+        };
+        let orderE={
+          group: "E",
+          first_place: this.results.groupE[0].name,
+          second_place: this.results.groupE[1].name,
+          third_place: this.results.groupE[2].name,
+          fourth_place: this.results.groupE[3].name,
+
+        };
+        let orderF={
+          group: "F",
+          first_place: this.results.groupF[0].name,
+          second_place: this.results.groupF[1].name,
+          third_place: this.results.groupF[2].name,
+          fourth_place: this.results.groupF[3].name,
+
+        };
+        let orderG={
+          group: "G",
+          first_place: this.results.groupG[0].name,
+          second_place: this.results.groupG[1].name,
+          third_place: this.results.groupG[2].name,
+          fourth_place: this.results.groupG[3].name,
+
+        };
+        let orderH={
+          group: "H",
+          first_place: this.results.groupH[0].name,
+          second_place: this.results.groupH[1].name,
+          third_place: this.results.groupH[2].name,
+          fourth_place: this.results.groupH[3].name,
+
+        };
+
+        let table =[orderA, orderB, orderC, orderD, orderE, orderF, orderG, orderH];
+
+        savePredictions(matches ,table, localStorage.getItem('user_id')).then((response) => {
+          console.log("response", response);
           // console.log("PREDICTION RESPONSE", response);
           if(response === "OK"){
-            alert(" Tu Quiniela se ha guardado exitosamente! Puedes modificarla gratuitamente hasta que comience el Mundial.");
+            alert("Tu Quiniela se ha guardado exitosamente! Puedes modificarla gratuitamente hasta que comience el Mundial.");
           }
+          this.loading = false;
         });
-      },
+      }
+
+
     },
 
     async created() {
@@ -867,14 +952,20 @@
     border-color: #898f92;
   }
 
-  .russia-bage{
+  .russia-badge{
     background-image: url("../assets/Interna/badge-small.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     display: inline;
     width: 150px;
-    padding: 8px 30px 3px 30px;
+    padding: 15px 40px 15px 50px;
+  }
+
+  .russia-badge.rules{
+    background-image: url("../assets/Home/btn-join.png");
+    padding: 10px 30px;
+    cursor: pointer;
   }
 
   .warning{

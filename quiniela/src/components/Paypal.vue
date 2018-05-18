@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Debes pagar tu inscripción para que se guarde tu quiniela.</p>
-    <div id="paypal-button-container"></div>
+    <div :disabled="loading" id="paypal-button-container"></div>
     <div v-if="success" class="alert alert-success">
       <strong>Success!</strong> Pago completado exitosamente
     </div>
@@ -20,7 +20,8 @@
     data() {
       return {
         success: false,
-        error: false
+        error: false,
+        loading: false,
       }
     },
 
@@ -73,6 +74,7 @@
       };
 
       let onAuthorize = (data) => {
+        this.loading=true;
         let send_data = {
           paymentID: data.paymentID,
           payerID: data.payerID,
@@ -81,6 +83,7 @@
         };
 
         this.sendDataPaypal({data: send_data}).then(() => {
+          this.loading = false;
           this.success = true; // to display the success message
           localStorage.setItem('has_paid', 'true');
           this.$emit('payment-success');

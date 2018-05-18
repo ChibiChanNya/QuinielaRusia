@@ -53,7 +53,7 @@ li{
 }
   /* TABS*/
 .tabs-component {
-  margin: 4em 0 0 0;
+  margin: 2em 0 0 0;
 }
 
 .tabs-component-tabs {

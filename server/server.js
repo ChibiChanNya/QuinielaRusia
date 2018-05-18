@@ -24,7 +24,7 @@ const PaymentsController = require('./controllers/paymentsController');
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(logger('dev'));
 
@@ -32,6 +32,7 @@ app.use(logger('dev'));
 let users = require('./routes/users');
 let User = require('./models/user');
 let Prediction = require('./models/gameprediction');
+let GPrediction = require('./models/groupprediction');
 
 
 // API to handle Users
@@ -52,33 +53,33 @@ app.get('/api/teams', (req, res) => {
     res.json(teams);
 });
 
-app.get('/api/matches/all',passport.authenticate('jwt', { session: false}), (req, res)=> {
-    let matches= data.matches;
+app.get('/api/matches/all', passport.authenticate('jwt', {session: false}), (req, res) => {
+    let matches = data.matches;
     res.json(matches);
 });
 
-app.get('/api/battles/private', passport.authenticate('jwt', { session: false}), (req,res) => {
+app.get('/api/battles/private', passport.authenticate('jwt', {session: false}), (req, res) => {
     let privateBattles = data.private_battles;
     res.json(privateBattles);
 });
 
-app.get('/api/battles/private', passport.authenticate('jwt', { session: false}), (req,res) => {
+app.get('/api/battles/private', passport.authenticate('jwt', {session: false}), (req, res) => {
     let privateBattles = data.private_battles;
     res.json(privateBattles);
 });
 
-app.get('/api/matches/me', passport.authenticate('jwt', { session: false}), (req, res)=> {
+app.get('/api/matches/me', passport.authenticate('jwt', {session: false}), (req, res) => {
     let matches = data.matches;
     // Got predictions to work with.
     let user_id = req.user._id;
 
-    function find_by_id(id){
-        return matches.find((m)=> m.match_id == id);
+    function find_by_id(id) {
+        return matches.find((m) => m.match_id == id);
     }
 
-    User.findOne({_id: user_id}, function(err, user){
-        if(err){
-            console.log("error finding useer",err);
+    User.findOne({_id: user_id}, function (err, user) {
+        if (err) {
+            console.log("error finding useer", err);
             res.json(matches);
 
         }
@@ -87,17 +88,17 @@ app.get('/api/matches/me', passport.authenticate('jwt', { session: false}), (req
                 console.log("User not found!!!", err);
                 res.json(matches);
             }
-            else{
+            else {
                 Prediction.find({user: user}, function (err, predictions) {
-                    if( err || predictions.length <1){
+                    if (err || predictions.length < 1) {
                         console.log("User has no predictions or error fetcing em");
                         res.json(matches);
                     }
-                    else{
-                        predictions.forEach((item)=>{
+                    else {
+                        predictions.forEach((item) => {
                             let match = find_by_id(item.match_id);
 
-                            if(match){
+                            if (match) {
                                 match.localScore = item.localScore;
                                 match.visitorScore = item.visitorScore;
                             }
@@ -110,25 +111,26 @@ app.get('/api/matches/me', passport.authenticate('jwt', { session: false}), (req
     });
 });
 
-app.post('/api/matches/save', passport.authenticate('jwt', { session: false}), (req, res)=> {
-    let matches= req.body.matches;
+
+app.post('/api/matches/save', passport.authenticate('jwt', {session: false}), (req, res) => {
+    let matches = req.body.matches;
     let user_id = req.body.user_id;
-    // console.log(req);
-    User.findOne({_id: user_id}, function(err, user){
-        if(err){
-            console.log("error finding useer",err);
+    let table = req.body.table;
+    User.findOne({_id: user_id}, function (err, user) {
+        if (err) {
+            console.log("error finding useer", err);
         }
-        else{
-            if(!user){
-                console.log("User not found!!!",err);
+        else {
+            if (!user) {
+                console.log("User not found!!!", err);
                 return;
             }
-            Prediction.deleteMany({user: user}, function(err,deleted){
+            Prediction.deleteMany({user: user}, function (err, deleted) {
 
-                if(err) console.log("ERROR DELETING", error);
+                if (err) console.log("ERROR DELETING", error);
 
-                let promises = matches.map((m)=>{
-                    if(!m.match_id){
+                let promises = matches.map((m) => {
+                    if (!m.match_id) {
                         return;
                     }
                     return Prediction.create({
@@ -138,12 +140,31 @@ app.post('/api/matches/save', passport.authenticate('jwt', { session: false}), (
                         visitorScore: m.visitorScore
                     });
                 });
-                Promise.all(promises).then(function(results){
-                    res.sendStatus(200);
+                Promise.all(promises).then(function (results) {
+
+                    GPrediction.deleteMany({user: user}, function (err, deleted) {
+                        if (err) console.log("ERROR DELETING", error);
+                        let promises = table.map((t) => {
+                            if (!t.group) {
+                                console.log("NO GROUP");
+                                return;
+                            }
+                            return GPrediction.create({
+                                user: user_id,
+                                group: t.group,
+                                first_place: t.first_place,
+                                second_place: t.second_place,
+                                third_place: t.third_place,
+                                fourth_place: t.fourth_place,
+                            });
+                        });
+                        Promise.all(promises).then(function (results) {
+                            console.log("ALL DONES");
+                            res.status(200).send("OK");
+                        });
+                    });
                 });
-            });
-
-
+            })
         }
     });
 });
