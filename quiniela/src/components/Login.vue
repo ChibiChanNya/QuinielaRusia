@@ -62,17 +62,7 @@
       },
 
       social_login(provider) {
-        let access_token;
-        window.authenticateCallback = function (token, user_id, has_paid) {
-          console.log("Got this data".token, user_id, has_paid);
-          access_token = token;
-          localStorage.setItem('jwtToken', access_token);
-          localStorage.setItem('user_id', user_id);
-          localStorage.setItem('has_paid', has_paid);
-
-          document.location.href = '/matches'
-        };
-        window.open(start_auth(provider));
+        document.location.href = start_auth(provider);
       },
 
     },
