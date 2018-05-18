@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <app-nav></app-nav>
-    <h3 class="text-center">Tabla de Predicciones</h3>
-    <hr/>
-
-
+  <div id="matches">
+    <div class="header">
+      <router-link to="/"><img  src="../assets/Interna/logo-blanco.png"></router-link>
+    </div>
+    <div class="header-russia">
+      <img class="img-fluid" style="padding:10px" src="../assets/Interna/russia.png">
+    </div>
+    <h1 class="russia-bage">Partidos</h1>
     <div>
       <tabs >
         <!-- GRUPO A-->
-        <tab name="Grupo A">
+        <tab name="A">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupA"
                          :key="match.id"
@@ -19,34 +21,37 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsA">
+            <div class="offset-md-3 col-md-6 col-xs-12 offset-xs-0 table" id="resultsA">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupA">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
           </div>
         </tab>
         <!-- GRUPO B-->
-        <tab name="Grupo B">
+        <tab name="B">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupB"
                          :key="match.id"
@@ -55,34 +60,37 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsB">
+            <div class="offset-md-3 col-md-6 table" id="resultsB">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupB">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
           </div>
         </tab>
         <!-- GRUPO C-->
-        <tab name="Grupo C">
+        <tab name="C">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupC"
                          :key="match.id"
@@ -91,35 +99,39 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsC">
+            <div class="offset-md-3 col-md-6 table" id="resultsC">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupC">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
+
           </div>
         </tab>
 
         <!-- GRUPO D-->
-        <tab name="Grupo D">
+        <tab name="D">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupD"
                          :key="match.id"
@@ -128,35 +140,39 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsD">
+            <div class="offset-md-3 col-md-6 table" id="resultsD">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupD">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
+
           </div>
         </tab>
 
         <!-- GRUPO E -->
-        <tab name="Grupo E">
+        <tab name="E">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupE"
                          :key="match.id"
@@ -165,35 +181,39 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsE">
+            <div class="offset-md-3 col-md-6 table" id="resultsE">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupE">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
+
           </div>
         </tab>
 
         <!-- GRUPO F-->
-        <tab name="Grupo F">
+        <tab name="F">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupF"
                          :key="match.id"
@@ -202,35 +222,39 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsF">
+            <div class="offset-md-3 col-md-6 table" id="resultsF">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupF">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
+
           </div>
         </tab>
 
         <!-- GRUPO G-->
-        <tab name="Grupo G">
+        <tab name="G">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupG"
                          :key="match.id"
@@ -239,34 +263,38 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsG">
+            <div class="offset-md-3 col-md-6 table" id="resultsG">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupG">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
+
           </div>
         </tab>
         <!-- GRUPO H-->
-        <tab name="Grupo H">
+        <tab name="H">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
                          v-for="match in groupH"
                          :key="match.id"
@@ -275,34 +303,37 @@
               ></component>
             </div>
 
-            <div class="col-md-4" id="resultsH">
+            <div class="offset-md-3 col-md-6 table" id="resultsH">
+              <h1 class="russia-bage" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
-                  <th>Equipo</th>
+                  <th></th>
                   <th>Pts</th>
-                  <th>G</th>
-                  <th>P</th>
-                  <th>E</th>
-                  <th>G</th>
+                  <th>Gan.</th>
+                  <th>Emp.</th>
+                  <th>Per.</th>
+                  <th>GF</th>
                   <th>GC</th>
+                  <th>Dif.</th>
                 </tr>
                 <tr v-for="team in results.groupH">
                   <td>{{team.name}}</td>
                   <td>{{team.points}}</td>
                   <td>{{team.wins}}</td>
-                  <td>{{team.loses}}</td>
                   <td>{{team.draws}}</td>
+                  <td>{{team.loses}}</td>
                   <td>{{team.goals}}</td>
                   <td>{{team.goals_against}}</td>
+                  <td>{{team.goals - team.goals_against}}</td>
                 </tr>
               </table>
             </div>
           </div>
         </tab>
         <!-- OCTAVOS DE FINAL-->
-        <tab name="Octavos" v-if="octavos_ready">
+        <tab name="8vos" v-if="octavos_ready">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="octavos_ready"
                          v-for="match in finals.octavos"
                          :key="match.id"
@@ -313,9 +344,9 @@
           </div>
         </tab>
 
-        <tab name="Cuartos" v-if="cuartos_ready">
+        <tab name="4tos" v-if="cuartos_ready">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="cuartos_ready"
                          v-for="match in finals.cuartos"
                          :key="match.id"
@@ -326,9 +357,9 @@
           </div>
         </tab>
 
-        <tab name="Semifinales" v-if="semis_ready">
+        <tab name="Semis" v-if="semis_ready">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="semis_ready"
                          v-for="match in finals.semifinales"
                          :key="match.id"
@@ -341,7 +372,7 @@
 
         <tab name="Final" v-if="final_ready">
           <div class="row">
-            <div class="col-md-8">
+            <div class="offset-md-3 col-md-6">
               <component :is="final_ready"
                          v-for="match in finals.final"
                          :key="match.id"
@@ -355,18 +386,22 @@
       </tabs>
     </div>
 
-    <paypal v-if="!premium"></paypal>
-    <button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>
+    <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
+    <!--<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>-->
     <button v-if="premium"  @click.stop="saveChanges()" class="btn btn-lg btn-success">Actualizar Quiniela</button>
+    <!--<button  @click.stop="clear()" class="btn btn-lg btn-success">CLEAR</button>-->
 
+    <img src="../assets/Footer/separador.png" style="max-width: 100vw">
+    <Footer style="margin-top: 0px"></Footer>
   </div>
 </template>
 
 <script>
   import AppNav from './AppNav';
   import { isLoggedIn } from '../../utils/auth';
-  import { getMatches, savePredictions , getTeams} from '../../utils/matches-api';
+  import { getMatches, savePredictions , getTeams, getPredictions} from '../../utils/matches-api';
   import Paypal from './Paypal'
+  import Footer from './Footer'
   import Match from './Match'
 
 
@@ -374,13 +409,14 @@
     name: 'Matches',
     components: {
       Match,
-      AppNav,
+      Footer,
+      // AppNav,
       'paypal': Paypal
     },
 
     data() {
       return {
-        premium: localStorage.getItem('has_paid'),
+        premium: localStorage.getItem('has_paid') === "true",
         loading: true,
         matches: null,
 
@@ -433,7 +469,7 @@
           return result;
         }
         else{
-          console.log("Failed to find team: ", name);
+          // console.log("Failed to find team: ", name);
           return {};
         }
       },
@@ -496,6 +532,13 @@
         }, this);
 
         this.results.groupA.sort(this.compare);
+        this.results.groupB.sort(this.compare);
+        this.results.groupC.sort(this.compare);
+        this.results.groupD.sort(this.compare);
+        this.results.groupE.sort(this.compare);
+        this.results.groupF.sort(this.compare);
+        this.results.groupG.sort(this.compare);
+        this.results.groupH.sort(this.compare);
 
         this.generate_octavos();
         this.generate_cuartos();
@@ -589,40 +632,20 @@
         this.finals.final = this.matches.filter((m)=> m.group ==="Final");
       },
 
-      onMatchChange(id, newMatch) {
-        let match = this.matches.find((m) => m.match_id === newMatch.match_id);
-        match.localScore = newMatch.localScore;
-        match.visitorScore = newMatch.visitorScore;
-      },
-
-      saveChanges(){
-        this.save();
-      },
-
-      save: function(){
-        let matches = this.matches.map((m)=>{
-          return {
-            match_id: m.match_id,
-            localScore: m.localScore,
-            visitorScore: m.visitorScore,
-            winner: this.get_winner(m)
-          }
-        }, this);
-        savePredictions(matches, localStorage.getItem('user_id')).then((response) => {
-            console.log("PREDICTION RESPONSE", response);
-          });
-      },
 
       get_winner(match){
         if(match.localScore > match.visitorScore)
-          return match.localTeam;
+          return match.local_team;
         else if(match.localScore < match.visitorScore)
-          return match.visitorTeam;
-        else return match.localTeam;
+          return match.visitor_team;
+        else return match.local_team;
 
       },
 
       generate_octavos(){
+
+        // console.log("Generating Octavos");
+
         let octavos1 = this.finals.octavos[0];
         octavos1.local_team = this.results.groupA[0].name;
         octavos1.visitor_team = this.results.groupB[1].name;
@@ -660,6 +683,7 @@
       },
 
       generate_cuartos(){
+
         let cuartos1 = this.finals.cuartos[0];
         cuartos1.local_team = this.get_winner(this.finals.octavos[0]);
         cuartos1.visitor_team = this.get_winner(this.finals.octavos[1]);
@@ -677,10 +701,10 @@
         cuartos4.visitor_team = this.get_winner(this.finals.octavos[6]);
 
         this.cuartos_ready="Match";
-
       },
 
       generate_semis(){
+
         let semifinals1 = this.finals.semifinales[0];
         semifinals1.local_team = this.get_winner(this.finals.cuartos[0]);
         semifinals1.visitor_team = this.get_winner(this.finals.cuartos[1]);
@@ -690,22 +714,105 @@
         semifinals2.visitor_team = this.get_winner(this.finals.cuartos[3]);
 
         this.semis_ready="Match";
+
       },
 
       generate_final(){
-
         let final1 = this.finals.final[0];
         final1.local_team = this.get_winner(this.finals.semifinales[0]);
         final1.visitor_team = this.get_winner(this.finals.semifinales[1]);
 
         this.final_ready="Match";
+        // console.log("final", final1);
+
+      },
+
+      clear(){
+        this.octavos_ready = null;
+        this.semis_ready = null;
+        this.cuartos_ready = null;
+        this.final_ready = null;
+      },
+
+
+
+      onMatchChange(id, newMatch) {
+        let match = this.matches.find((m) => m.match_id === newMatch.match_id);
+        match.localScore = newMatch.localScore;
+        match.visitorScore = newMatch.visitorScore;
+        if(match.group.length === 1 ){
+          this.clear();
+          this.$nextTick(this.calculateTable);
+        }
+        else if(match.group === "Octavos"){
+          this.cuartos_ready = null;
+          this.semis_ready = null;
+          this.final_ready = null;
+          this.$nextTick(
+            ()=>{
+              this.generate_cuartos();
+              this.generate_semis();
+              this.generate_final();
+            });
+        }
+        else if(match.group === "Cuartos"){
+          this.semis_ready = null;
+          this.final_ready = null;
+          this.$nextTick(
+            ()=>{
+              this.generate_semis();
+              this.generate_final();
+            });
+        }
+        else if(match.group === "Semifinales"){
+          this.final_ready = null;
+          this.$nextTick(this.generate_final);
+        }
+      },
+
+      onPaymentComplete(event){
+        // console.log(event);
+        this.premium = true;
+        this.save();
+      },
+
+      saveChanges(){
+        this.save();
+      },
+
+      save: function(){
+        let matches = this.matches.map((m)=>{
+          return {
+            match_id: m.match_id,
+            localScore: m.localScore,
+            visitorScore: m.visitorScore,
+            winner: this.get_winner(m)
+          }
+        }, this);
+        savePredictions(matches, localStorage.getItem('user_id')).then((response) => {
+          // console.log("PREDICTION RESPONSE", response);
+          if(response === "OK"){
+            alert(" Tu Quiniela se ha guardado exitosamente! Puedes modificarla gratuitamente hasta que comience el Mundial.");
+          }
+        });
       },
     },
 
     async created() {
-      getMatches().then((matches) => {
-        this.setMatches(matches);
-      });
+      if(localStorage.has_paid === "true"){
+        getPredictions().then((matches) => {
+          this.setMatches(matches);
+          this.generate_octavos();
+          this.generate_cuartos();
+          this.generate_semis();
+          this.generate_final();
+        });
+      }
+      else{
+        getMatches().then((matches) => {
+          this.setMatches(matches);
+        });
+      }
       getTeams().then((teams) => {
         this.setTeams(teams);
       })
@@ -716,7 +823,56 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  th,td{
-    padding: 5px;
+
+  table{
+    margin-top: 30px;
   }
+  th,td{
+    padding: 5px 20px;
+    font-size: 1.5em;
+    color: #003973;
+  }
+  th{
+    color:#898f92;
+    font-size: 1em;
+    font-family: centrale, sans-serif;
+  }
+
+  tr:not(:first-child){
+    border-top: 1px solid rgba(137,143,146,0.3);
+  }
+
+  #matches{
+    background-image: url("../assets/Home/bg-white.png");
+    background-size: cover;
+  }
+
+  .table{
+    margin-top: 50px;
+  }
+
+
+  .header-russia{
+    padding: 30px 0 20px 0;
+  }
+  .header-russia img{
+    max-height: 100px;
+  }
+
+  .btn.btn-lg{
+    font-size: 1.5em;
+    background: #003973;
+    border-color: #898f92;
+  }
+
+  .russia-bage{
+    background-image: url("../assets/Interna/badge-small.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: inline;
+    width: 150px;
+    padding: 8px 30px 3px 30px;
+  }
+
 </style>

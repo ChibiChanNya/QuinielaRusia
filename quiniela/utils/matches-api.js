@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getToken } from './auth';
+import Router from '../src/router/index.js';
 
 const BASE_URL = 'http://localhost:3333';
 
@@ -12,7 +13,7 @@ function getMatches() {
       console.log(e);
       if (e.response.status === 401) {
         console.log("BEEP failed permission");
-        this.$router.push({
+        Router.push({
           name: 'Login'
         })
       }
@@ -31,7 +32,7 @@ function getPredictions() {
       console.log(e);
       if (e.response.status === 401) {
         console.log("BEEP failed permission");
-        this.$router.push({
+        Router.push({
           name: 'Login'
         })
       }

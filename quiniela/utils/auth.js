@@ -10,8 +10,10 @@ export function login() {
 
 export function logout() {
   localStorage.removeItem('jwtToken');
+  localStorage.removeItem('user_id');
+  localStorage.removeItem('has_paid');
   Router.push({
-    name: 'PublicBattles'
+    name: 'Home'
   })}
 
 export function requireAuth(to, from, next) {

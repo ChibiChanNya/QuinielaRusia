@@ -78,9 +78,12 @@
           amount: 500,
           user_id: localStorage.getItem('user_id')
         };
+
         this.sendDataPaypal({data: send_data}).then(() => {
-          this.success = true // to display the success message
+          this.success = true; // to display the success message
           localStorage.setItem('has_paid', 'true');
+          this.$emit('payment-success');
+
         }).catch(err => {
           this.error = true  // to display  the error message
         });

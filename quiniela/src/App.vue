@@ -11,24 +11,53 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: centrale;
+  src: url('./assets/font/Centrale_Sans_Medium.otf');
+}
+
+@font-face {
+  font-family: centrale;
+  src: url('./assets/font/Centrale_Sans_Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: centrale-italics;
+  src: url('./assets/font/Centrale_Sans_Light.otf');
+}
+
+@font-face {
+  font-family: centrale-italics;
+  src: url('./assets/font/Centrale_Sans_Bold_Italic.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: dusha;
+  src: url('./assets/font/Dusha.ttf');
+}
+
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: dusha, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  font-size: 10pt;
 }
 
   /* TABS*/
 .tabs-component {
-  margin: 4em 0;
+  margin: 4em 0 0 0;
 }
 
 .tabs-component-tabs {
   border: solid 1px #ddd;
   border-radius: 6px;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
 @media (min-width: 700px) {
@@ -38,27 +67,24 @@ export default {
     display: flex;
     justify-content: flex-start;
     margin-bottom: -1px;
+    display:inline-block;
   }
 }
 
 .tabs-component-tab {
-  color: #999;
-  font-size: 14px;
+  color: #f9f9f9;
+  font-size: 18px;
   font-weight: 600;
   margin-right: 0;
   list-style: none;
-}
-
-.tabs-component-tab:not(:last-child) {
-  border-bottom: dotted 1px #ddd;
-}
-
-.tabs-component-tab:hover {
-  color: #666;
+  background-image: url("./assets/Interna/tab-inactive.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
 }
 
 .tabs-component-tab.is-active {
-  color: #000;
+  background-image: url("./assets/Interna/tab-active.png");
 }
 
 .tabs-component-tab.is-disabled * {
@@ -68,8 +94,7 @@ export default {
 
 @media (min-width: 700px) {
   .tabs-component-tab {
-    background-color: #fff;
-    border: solid 1px #ddd;
+
     border-radius: 3px 3px 0 0;
     margin-right: .5em;
     transform: translateY(2px);
@@ -77,7 +102,7 @@ export default {
   }
 
   .tabs-component-tab.is-active {
-    border-bottom: solid 1px #fff;
+    /*border-bottom: solid 1px #fff;*/
     z-index: 2;
     transform: translateY(0);
   }
@@ -89,6 +114,11 @@ export default {
   display: flex;
   padding: .75em 1em;
   text-decoration: none;
+  top: -5px;
+}
+
+.tabs-component-tab-a:hover, .tabs-component-tab-a:focus, .tabs-component-tab-a:active{
+  color:white;
 }
 
 .tabs-component-panels {
@@ -98,10 +128,10 @@ export default {
 @media (min-width: 700px) {
   .tabs-component-panels {
     border-top-left-radius: 0;
-    background-color: #fff;
-    border: solid 1px #ddd;
-    border-radius: 0 6px 6px 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    /*background-color: #fff;*/
+    /*border: solid 1px #ddd;*/
+    /*border-radius: 0 6px 6px 6px;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, .05);*/
     padding: 4em 2em;
   }
 }
@@ -122,8 +152,9 @@ body {
   background-color: #efefef;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  padding: 1em;
 }
+
+
 
 .page {
   background-color: #fff;
@@ -238,6 +269,15 @@ body {
     right: -.725em;
     top: -.725em;
   }
+}
+
+.header{
+  background-image: url("./assets/Interna/background-header.png");
+  background-size: cover;
+}
+
+.header img{
+  max-height: 100px;
 }
 
 </style>

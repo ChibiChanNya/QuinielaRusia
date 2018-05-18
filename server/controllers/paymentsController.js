@@ -1,4 +1,6 @@
 let PaypalService = require('../config/paypalService');
+let User = require('../models/user');
+
 
 module.exports = {
     checkoutPaypal(req,res){
@@ -16,7 +18,12 @@ module.exports = {
                 res.error(err);
             }
             console.log("PROCESS COMPLETE",result);
-            res.json(result)
+            User.findOneAndUpdate({_id: user_id}, {$set:{has_paid: true}}, function(err, user){
+                if(err){
+                    console.log("Failed to give user premium status");
+                }
+                res.json(result)
+            });
         });
 
     },

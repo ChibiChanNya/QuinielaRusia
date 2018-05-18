@@ -1,14 +1,15 @@
 <template>
   <nav class="navbar navbar-default">
     <div class="navbar-header">
-      <router-link to="/" class="navbar-brand"> The Ultimate Startup Battle Ground</router-link>
+      <router-link to="/" class="navbar-brand">Quiniela Rusia 2018</router-link>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li>
         <button class="btn btn-danger log" v-show="isLoggedIn()" @click="handleLogout()">Log out </button>
         <button class="btn btn-info log" v-show="!isLoggedIn()" @click="handleLogin()">Log In</button>
-        <router-link class="btn btn-sm btn-success" to="/matches">Matches</router-link>
-
+      </li>
+      <li>
+        <router-link class="btn btn-success log" to="/matches">Matches</router-link>
       </li>
     </ul>
   </nav>

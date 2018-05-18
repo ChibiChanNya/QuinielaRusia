@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import PrivateBattles from '@/components/privateBattles';
-import PublicBattles from '@/components/publicBattles';
 import Matches from '@/components/matches';
 import Login from '@/components/Login'
-import HelloWorld from '@/components/HelloWorld'
-
+import Authenticated from '@/components/Authenticated'
+import Home from '@/components/Home'
+import Privacy from '@/components/Privacy'
+import Terms from '@/components/Terms'
 
 Vue.use(Router);
 
@@ -14,28 +14,35 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'PublicBattles',
-      component: PublicBattles,
-    },
-    {
-      path: '/private-battles',
-      name: 'PrivateBattles',
-      component: PrivateBattles,
+      name: 'Quiniela',
+      component: Home,
     },
     {
       path: '/matches',
-      name: 'Matches',
+      name: 'Quiniela',
       component: Matches,
     },
     {
       path: '/login',
-      name: 'Login',
+      name: 'Iniciar Sesión',
       component: Login
     },
     {
       path: '/authenticated',
-      name: 'authenticated',
-      component: HelloWorld
+      name: 'Autenticado',
+      component: Authenticated
+    },
+    {
+      path: '/privacy-policy',
+      name: 'Política de Privacidad',
+      component: Privacy
+    },
+    {
+      path: '/terms',
+      name: 'Términos y Condiciones',
+      component: Terms
     },
   ],
+
+  
 });
