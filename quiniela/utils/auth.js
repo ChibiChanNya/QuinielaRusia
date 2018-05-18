@@ -12,9 +12,15 @@ export function logout() {
   localStorage.removeItem('jwtToken');
   localStorage.removeItem('user_id');
   localStorage.removeItem('has_paid');
-  Router.push({
-    name: 'Home'
-  })}
+  if(Router.currentRoute.name === "Home"){
+    location.reload();
+  }
+  else{
+    Router.push({
+      name: 'Home'
+    });
+  }
+}
 
 export function requireAuth(to, from, next) {
   if (!isLoggedIn()) {

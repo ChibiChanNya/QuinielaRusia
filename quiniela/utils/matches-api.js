@@ -7,6 +7,7 @@ const BASE_URL = process.env.SERVER_URL;
 export {getMatches, getPredictions, savePredictions, getTeams};
 
 function getMatches() {
+
   const url = `${BASE_URL}/api/matches/all`;
   return axios.get(url, {headers: {Authorization: getToken()}}).then(response => response.data)
     .catch(e => {
@@ -26,6 +27,7 @@ function getTeams() {
 }
 
 function getPredictions() {
+
   const url = `${BASE_URL}/api/matches/me`;
   return axios.get(url, {headers: {Authorization: getToken()}}).then(response => response.data)
     .catch(e => {
