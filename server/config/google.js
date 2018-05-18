@@ -6,7 +6,7 @@ const User = require('../models/user');
 const passportConfig = {
     clientID: process.env.GOOGLE_CLIENTID,
     clientSecret: process.env.GOOGLE_CLIENTSECRET,
-    callbackURL: 'http://localhost:3333/api/auth/google/redirect'
+    callbackURL: process.env.SERVER_URL+'/api/auth/google/redirect'
 };
 
 if (passportConfig.clientID) {
