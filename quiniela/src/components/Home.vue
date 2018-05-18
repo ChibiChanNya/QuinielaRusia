@@ -9,7 +9,7 @@
 
       <h1>Participa y gana con la primera quiniela digital que BINDIVA y FUTHUB crearon para ti</h1>
 
-      <router-link class="btn btn-link btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
+      <router-link class="btn btn-join btn-lg" to="/matches"><span>INSCRÍBETE AHORA</span></router-link>
 
       <p>Inscripción: $500.00 MXN por participante</p>
       <p>80 participantes garantizados </p>
@@ -28,7 +28,7 @@
       </ul>
       <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros.</p>
 
-      <router-link class="btn btn-link btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
+      <router-link class="btn btn-join btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
 
       <p><sub>Éste es un evento privado, la participación esta sujeta a invitación</sub></p>
 
@@ -69,11 +69,11 @@
     background-image: url("../assets/Home/bg-home.png");
     background-size: cover;
     color: white;
-    font-size: 1.2em;
   }
 
   .home .content{
     padding: 0px 15px;
+    font-size: 1.2em;
   }
 
   p{
@@ -84,9 +84,13 @@
     max-width: 200px;
   }
 
-  .btn.btn-link{
+  .btn.btn-join{
     font-size: 2em;
     color: white;
+    background-image: url("../assets/Home/btn-join.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0px 20px 0px 20px;
   }
 
   .asterisk{
@@ -96,6 +100,4 @@
   a{
     text-shadow: 0 0 3px black;
   }
-
-
 </style>
