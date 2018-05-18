@@ -4,32 +4,36 @@
 
     <img class="logo center-block" src="../assets/Home/logo_blanco.png"/>
 
-    <h1>Reglas:</h1>
+    <div class="content">
+      <h1>Vive al máximo la copa mundial Russia 2018</h1>
 
-    <p>Costo: $500 por pesona</p>
-    <p>Garantizado 50 participantes con un premio mínimo de $20,000 en premios</p>
-    <p>Inscripción en esta plataforma</p>
-    <p>Para participar deberás hacer tu pago con Paypal</p>
-    <br>
-    <p>Se premiarán al 20% de los participantes</p>
-    <p>Los premios se calcularán con base al número de participantes</p>
-    <h3>Tabla de premios:</h3>
-    <ul>
-      <li>1er Lugar: 40%</li>
-      <li>2do Lugar: 20%</li>
-      <li>3er Lugar: 12.5%</li>
-      <li>4to Lugar: 7.5%</li>
-      <li>5to Lugar en adelante: Se repartirá 20% del monto recaudado</li>
-    </ul>
-    <br>
-    <p>La tabla de premios se publicará al terminar las inscripciones</p>
-    <p>Los resultados se actualizarán cada día en la plataforma</p>
-    <p>Se contactará a los ganadores via electrónica para la premiación</p>
-    <p>Los premios se entregarán una semana después de la final en un evento de premiación (15-Jul-2018)</p>
-    <br>
-    <p>Éste es un evento privado, la participación esta sujeta a invitación</p>
+      <h1>Participa y gana con la primera quiniela digital que BINDIVA y FUTHUB crearon para ti</h1>
 
-    <router-link class="btn btn-link btn-lg" to="/matches">DA CLIC AQUÍ PARA LLENAR TU QUINIELA</router-link>
+      <router-link class="btn btn-link btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
+
+      <p>Inscripción: $500.00 MXN por participante</p>
+      <p>80 participantes garantizados </p>
+      <p>$32,000.00 MXN en premios<span class="asterisk">&#x2731;</span></p>
+      <p>Se premiará al 20% de los ganadores<span class="asterisk">&#x2731;</span></p>
+      <br>
+      <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
+
+      <h3>Premios en porcentaje del total acumulado:</h3>
+      <ul>
+        <li>1er Lugar: 40%</li>
+        <li>2do Lugar: 20%</li>
+        <li>3er Lugar: 12.5%</li>
+        <li>4to Lugar: 7.5%</li>
+        <li>5to Lugar en adelante: Se premiará acorde al número de participantes</li>
+      </ul>
+      <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros.</p>
+
+      <router-link class="btn btn-link btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
+
+      <p><sub>Éste es un evento privado, la participación esta sujeta a invitación</sub></p>
+
+    </div>
+
     <Footer></Footer>
   </div>
 </template>
@@ -65,6 +69,11 @@
     background-image: url("../assets/Home/bg-home.png");
     background-size: cover;
     color: white;
+    font-size: 1.2em;
+  }
+
+  .home .content{
+    padding: 0px 15px;
   }
 
   p{
@@ -80,6 +89,13 @@
     color: white;
   }
 
+  .asterisk{
+    font-size: 1em;
+  }
+
+  a{
+    text-shadow: 0 0 3px black;
+  }
 
 
 </style>

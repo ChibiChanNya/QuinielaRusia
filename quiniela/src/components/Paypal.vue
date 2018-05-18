@@ -101,6 +101,9 @@
       paypal.Button.render({
         env: 'sandbox', // sandbox | production
         commit: true,
+        funding:{
+          allowed: [paypal.FUNDING.CREDIT]
+        },
         client,
         payment,
         onAuthorize,

@@ -45,9 +45,12 @@
   }
   footer img{
     max-height: 80px;
-    max-width: 200px;
+    /*max-width: 200px;*/
     height: auto;
     margin: 0 auto 0 auto;
   }
 
+  .btn.btn-link{
+    font-size: 1em;
+  }
 </style>
