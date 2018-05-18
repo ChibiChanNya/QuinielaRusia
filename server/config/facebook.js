@@ -11,9 +11,8 @@ const passportConfig = {
 
 if (passportConfig.clientID) {
     passport.use(new passportFacebook.Strategy(passportConfig, function (accessToken, refreshToken, profile, done) {
-        User.findOne({'auth.google_id': profile.id}, '_id', function(err, user){
-            console.log("ERROR?", err);
-            console.log("CHECKING USER!", user);
+        console.log("Got this from Facebook", profile);
+        User.findOne({'auth.facebook_id': profile.id}, '_id', function(err, user){
 
             if (!user) {
                 // They don't, so register them
