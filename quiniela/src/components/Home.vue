@@ -69,11 +69,11 @@
     background-image: url("../assets/Home/bg-home.png");
     background-size: cover;
     color: white;
-    font-size: 1.2em;
   }
 
   .home .content{
     padding: 0px 15px;
+    font-size: 1.2em;
   }
 
   p{
@@ -100,6 +100,4 @@
   a{
     text-shadow: 0 0 3px black;
   }
-
-
 </style>
