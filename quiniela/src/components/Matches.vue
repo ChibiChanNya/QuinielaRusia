@@ -807,10 +807,7 @@
       if(localStorage.getItem('has_paid') === "true"){
         getPredictions().then((matches) => {
           this.setMatches(matches);
-          this.generate_octavos();
-          this.generate_cuartos();
-          this.generate_semis();
-          this.generate_final();
+          this.calculateTable();
         });
       }
       else{
