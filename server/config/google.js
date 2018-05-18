@@ -12,7 +12,7 @@ const passportConfig = {
 if (passportConfig.clientID) {
     passport.use(new passportGoogle.OAuth2Strategy(passportConfig, function (request, accessToken, refreshToken, profile, done) {
         // See if this user already exists
-        User.findOne({'auth.google_id': profile.id}, '_id', function(err, user){
+        User.findOne({'auth.google_id': profile.id}, '_id profile.has_paid', function(err, user){
             console.log("ERROR?", err);
             console.log("CHECKING USER!", user);
 

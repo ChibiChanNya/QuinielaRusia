@@ -56,7 +56,7 @@ router.post('/login', function(req, res) {
 function generateUserToken(req, res) {
     console.log("GENERATING NEW TOKEN", req.user);
     const accessToken = token.generateAccessToken(req.user._id);
-    res.redirect('http://localhost:8080/authenticated?token=JWT ' + accessToken+'&user_id='+req.user._id+'&has_paid='+req.user.has_paid);
+    res.redirect('http://localhost:8080/authenticated?token=JWT ' + accessToken+'&user_id='+req.user._id+'&has_paid='+req.user.profile.has_paid);
 }
 
 router.get('/google/start',

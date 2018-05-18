@@ -28,7 +28,7 @@ module.exports = {
                         cb(err, "fail");
                     }
                     else{
-                        User.update({ _id: user_id }, { $set: { 'profile.has_paid': true }}, function(err){
+                        User.findByIdAndUpdate({ _id: user_id }, { $set: { 'profile.has_paid': true }}, function(err){
                             if(err){
                                 console.log("Failed updating User Premium", err);
                                 cb(err, "fail");

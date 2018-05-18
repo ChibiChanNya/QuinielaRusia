@@ -7,7 +7,6 @@ let UserSchema = new Schema({
     auth:{
         username: {
             type: String,
-            unique: false,
             required: false
         },
         provider: {
@@ -21,10 +20,12 @@ let UserSchema = new Schema({
         google_id:{
             type: String,
             unique: true,
+            sparse: true,
         },
         facebook_id:{
             type: String,
             unique: true,
+            sparse: true,
         },
         email:{
             type: String,
@@ -36,7 +37,6 @@ let UserSchema = new Schema({
         display_pic: {type: String},
         has_paid : {type: Boolean, default: false},
     },
-
     points: {type: Number, default: 0},
 });
 

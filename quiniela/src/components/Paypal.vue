@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Debes pagar tu inscripción para que se guarde tu quiniela.</p>
     <div id="paypal-button-container"></div>
     <div v-if="success" class="alert alert-success">
       <strong>Success!</strong> Pago completado exitosamente

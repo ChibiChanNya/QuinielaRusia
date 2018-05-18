@@ -14,35 +14,35 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Quiniela',
+      name: 'Home',
       component: Home,
     },
     {
       path: '/matches',
-      name: 'Quiniela',
+      name: 'Matches',
       component: Matches,
     },
     {
       path: '/login',
-      name: 'Iniciar Sesión',
+      name: 'Login',
       component: Login
     },
     {
       path: '/authenticated',
-      name: 'Autenticado',
+      name: 'Authenticated',
       component: Authenticated
     },
     {
       path: '/privacy-policy',
-      name: 'Política de Privacidad',
+      name: 'Privacy',
       component: Privacy
     },
     {
       path: '/terms',
-      name: 'Términos y Condiciones',
+      name: 'Terms',
       component: Terms
     },
   ],
 
-  
+
 });
