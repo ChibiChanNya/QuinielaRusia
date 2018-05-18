@@ -6,12 +6,13 @@ const User = require('../models/user');
 const passportConfig = {
     clientID: process.env.FACEBOOK_CLIENTID,
     clientSecret: process.env.FACEBOOK_CLIENTSECRET,
-    callbackURL: process.env.SERVER_URL+'/api/auth/facebook/redirect'
+    callbackURL: process.env.SERVER_URL+'/api/auth/facebook/redirect',
+    profileFields: ['id', 'displayName', 'photos', 'email']
 };
 
 if (passportConfig.clientID) {
     passport.use(new passportFacebook.Strategy(passportConfig, function (accessToken, refreshToken, profile, done) {
-        User.findOne({'auth.google_id': profile.id}, '_id profile.has_paid', function(err, user){
+        User.findOne({'auth.facebook_id': profile.id}, '_id profile.has_paid', function(err, user){
             console.log("ERROR?", err);
             console.log("CHECKING USER!", user);
 
@@ -21,12 +22,12 @@ if (passportConfig.clientID) {
                 User.create({
                     auth:{
                         facebook_id: profile.id,
-                        email: profile.emails[0].value,
+                        // email: profile.emails[0].value,
                         provider: "facebook",
                     },
                     profile:{
                         display_name: profile.displayName,
-                        display_picture: profile.photos[0].value
+                        // display_picture: profile.photos[0].value
                     }
                 }, function(err, user){
                     console.log("Finished creating USER", user);
