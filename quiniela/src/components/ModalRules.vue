@@ -15,33 +15,33 @@
             <slot name="body">
               <h2>Fase de Grupos (48 Partidos)</h2>
               <ul>
-                <li>5 puntos por prediccion de partido correcta</li>
-                <li>10 puntos por prediccion de partido y puntaje correcta</li>
+                <li>5 puntos por predicción de partido correcta (ganador o empate)</li>
+                <li>10 puntos por predicción de partido y marcador correcto</li>
                 <li>25 puntos por predicción del orden del grupo (8 grupos)</li>
               </ul>
 
               <h2>Octavos de Final (8 Partidos)</h2>
               <ul>
                 <li>15 puntos por prediccion de partido correcta</li>
-                <li>30 puntos por prediccion de partido y puntaje correcta</li>
+                <li>30 puntos por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Cuartos de Final (4 Partidos)</h2>
               <ul>
                 <li>40 puntos por prediccion de partido correcta</li>
-                <li>80 puntos por prediccion de partido y puntaje correcta</li>
+                <li>80 puntos por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Semifinales</h2>
               <ul>
                 <li>75 puntos por prediccion de partido correcta</li>
-                <li>150 puntos por prediccion de partido y puntaje correcta</li>
+                <li>150 puntos por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Final</h2>
               <ul>
                 <li>150 puntos por prediccion de partido correcta</li>
-                <li>300 puntos por prediccion de partido y puntaje correcta</li>
+                <li>300 puntos por predicción de partido y marcador correcto</li>
               </ul>
             </slot>
           </div>
