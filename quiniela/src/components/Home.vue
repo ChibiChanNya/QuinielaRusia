@@ -2,7 +2,7 @@
   <div class="home">
     <!--<app-nav></app-nav>-->
 
-    <img class="logo center-block" src="../assets/Home/logo_blanco.png"/>
+    <img class="logo center-block img-fluid" src="../assets/Home/logo_blanco.png"/>
 
     <div class="content">
       <h1>Vive al máximo la copa mundial Russia 2018</h1>

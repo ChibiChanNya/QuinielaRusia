@@ -48,6 +48,9 @@ export default {
   font-size: 10pt;
 }
 
+li{
+  list-style: none;
+}
   /* TABS*/
 .tabs-component {
   margin: 4em 0 0 0;
@@ -71,6 +74,10 @@ export default {
   }
 }
 
+
+@media (max-width: 700px) {
+
+}
 .tabs-component-tab {
   color: #f9f9f9;
   font-size: 18px;
