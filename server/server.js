@@ -28,21 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(logger('dev'));
 
-// Function to check auth tokens
-let getToken = function (headers) {
-    if (headers && headers.authorization) {
-        let parted = headers.authorization.split(' ');
-        if (parted.length === 2) {
-            return parted[1];
-        } else {
-            return null;
-        }
-    } else {
-        return null;
-    }
-};
-
-
 // Import Routes
 let users = require('./routes/users');
 let User = require('./models/user');
