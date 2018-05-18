@@ -799,7 +799,8 @@
     },
 
     async created() {
-      if(localStorage.has_paid === "true"){
+
+      if(localStorage.getItem('has_paid') === "true"){
         getPredictions().then((matches) => {
           this.setMatches(matches);
           this.generate_octavos();
