@@ -66,7 +66,7 @@ router.get('/google/redirect',
     generateUserToken);
 
 router.get('/facebook/start',
-    passport.authenticate('facebook', { session: false, scope:['email', 'picture.type(large)'] }));
+    passport.authenticate('facebook', { session: false, scope:['email'] }));
 router.get('/facebook/redirect',
     passport.authenticate('facebook', { session: false }),
     generateUserToken);
