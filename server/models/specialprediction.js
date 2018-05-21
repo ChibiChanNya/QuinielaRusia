@@ -5,10 +5,10 @@ let Schema = mongoose.Schema;
 
 let SpecialPredictionSchema = Schema({
     user: {type: Schema.ObjectId, ref: 'User', index:true},
-    first_place: {type: Schema.ObjectId, ref: 'Team'},
-    second_place: {type: Schema.ObjectId, ref: 'Team'},
-    third_place: {type: Schema.ObjectId, ref: 'Team'},
-    fourth_place: {type: Schema.ObjectId, ref: 'Team'},
+    first_place: {type: String},
+    second_place: {type: String},
+    third_place: {type: String},
+    fourth_place: {type: String},
     goal_champion: {type: String}
 });
 

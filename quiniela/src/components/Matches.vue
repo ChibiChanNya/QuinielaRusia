@@ -8,6 +8,24 @@
     <div class="header-russia">
       <img class="img-fluid" style="padding:10px" src="../assets/Interna/russia.png">
     </div>
+    <div style="margin-bottom: 1em">
+      <h1 class="russia-badge rules"><span>Bienvenido a la Quiniela</span></h1>
+    </div>
+    <div class="instructions offset-md-3" style="margin-bottom: 3em; text-align:justify">
+      <h1>¡Participa!</h1>
+      <ol>
+        <li><b>1-</b> Llena todos los partidos de la primera fase con marcador.</li>
+        <li><b>2-</b> Completa los partidos y resultados de las finales.</li>
+        <li><b>3-</b> Predice quién será el campeón goleador del mundial.</li>
+        <li><b>4-</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
+        <li><b>5-</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
+      </ol>
+      <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
+      <p>Gracias por participar</p>
+      <p>- Equipo de Bindiva y Futhub</p>
+    </div>
+
+
     <div style="margin-bottom: 3em">
       <h1 class="russia-badge rules" id="show-modal" @click="showModal = true"><span>Ver esquema de Puntos</span></h1>
     </div>
@@ -299,7 +317,7 @@
           </div>
         </tab>
         <!-- GRUPO H-->
-        <tab name="H">
+        <tab name="H" >
           <div class="row">
             <div class="offset-md-3 col-md-6">
               <component :is="pending_component"
@@ -338,7 +356,7 @@
           </div>
         </tab>
         <!-- OCTAVOS DE FINAL-->
-        <tab name="8vos" v-if="octavos_ready">
+        <tab name="Octavos" v-if="octavos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
               <span class="warning">Se toma el resultado final, después de penales.</span>
@@ -352,7 +370,7 @@
           </div>
         </tab>
 
-        <tab name="4tos" v-if="cuartos_ready">
+        <tab name="Cuartos" v-if="cuartos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
               <span class="warning">Se toma el resultado final, después de penales.</span>
@@ -366,7 +384,7 @@
           </div>
         </tab>
 
-        <tab name="Semis" v-if="semis_ready">
+        <tab name="Semifinales" v-if="semis_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
               <span class="warning">Se toma el resultado final, después de penales.</span>
@@ -397,6 +415,28 @@
       </tabs>
     </div>
 
+    <h1 class="russia-badge rules" ><span>Predicciones Especiales</span></h1>
+    <div class="offset-md-3"  style="margin-top: 50px;margin-bottom:50px">
+      <div class="form-group">
+        <div class="v-select-block">
+          <label class="col-xs-6 col-md-3" for="first-place">Campeón:</label><vSelect id="first-place"  v-model="specials.selected_1st" :options="team_names"></vSelect>
+        </div>
+        <div class="v-select-block">
+          <label class="col-xs-6 col-md-3" for="second-place">Subcampeón:</label><vSelect id="second-place" v-model="specials.selected_2nd" :options="team_names"></vSelect>
+        </div>
+        <div class="v-select-block">
+          <label class="col-xs-6 col-md-3" for="third-place">Tercer Lugar:</label><vSelect id="third-place" v-model="specials.selected_3rd" :options="team_names"></vSelect>
+        </div>
+        <div class="v-select-block">
+          <label class="col-xs-6 col-md-3" for="fourth-place">Cuarto Lugar:</label><vSelect id="fourth-place" v-model="specials.selected_4th" :options="team_names"></vSelect>
+        </div>
+        <div class="v-select-block">
+          <label class="col-xs-6 col-md-3" for="champion-goaler">Campeón Goleador:</label> <vSelect id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
+        </div>
+      </div>
+    </div>
+
+
     <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
     <!--<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>-->
     <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
@@ -415,7 +455,8 @@
   import Footer from './Footer'
   import Match from './Match'
   import ModalRules from './ModalRules'
-
+  import vSelect from 'vue-select'
+  import players from '../assets/data/players'
 
 
   export default {
@@ -425,7 +466,8 @@
       Footer,
       // AppNav,
       'paypal': Paypal,
-      ModalRules
+      ModalRules,
+      vSelect
     },
 
     data() {
@@ -436,6 +478,17 @@
         premium: localStorage.getItem('has_paid') === "true",
         loading: false,
         matches: null,
+
+        specials:{
+          selected_1st: null,
+          selected_3rd: null,
+          selected_2nd: null,
+          selected_4th: null,
+          selected_goaler: null,
+        },
+        players : players,
+
+        team_names: [],
 
         groupA: [],
         groupB: [],
@@ -503,7 +556,6 @@
         });
 
         let groupMatches = this.matches.filter((m)=> m.group.length === 1);
-        // let groupMatches = this.matches.filter((m)=> m.group === "A");
 
         groupMatches.forEach(function(m){
 
@@ -598,6 +650,8 @@
 
 
       setTeams: function (teams){
+
+        this.team_names = teams.map((t)=> t.name);
         teams.forEach( (t) =>{
           t.name = t.name.toUpperCase();
           t.points=0;
@@ -874,8 +928,8 @@
 
         let table =[orderA, orderB, orderC, orderD, orderE, orderF, orderG, orderH];
 
-        savePredictions(matches ,table, localStorage.getItem('user_id')).then((response) => {
-          console.log("response", response);
+
+        savePredictions(matches ,table, this.specials, localStorage.getItem('user_id')).then((response) => {
           // console.log("PREDICTION RESPONSE", response);
           if(response === "OK"){
             alert("Tu Quiniela se ha guardado exitosamente! Puedes modificarla gratuitamente hasta que comience el Mundial.");
@@ -890,8 +944,16 @@
     async created() {
 
       if(localStorage.getItem('has_paid') === "true"){
-        getPredictions().then((matches) => {
-          this.setMatches(matches);
+        getPredictions().then((predictions) => {
+          console.log("PRED", predictions);
+          this.setMatches(predictions.matches);
+          this.specials = {
+            selected_1st: predictions.specials.first_place,
+            selected_2nd: predictions.specials.second_place,
+            selected_3rd: predictions.specials.third_place,
+            selected_4th: predictions.specials.fourth_place,
+            selected_goaler: predictions.specials.goal_champion,
+          };
           this.calculateTable();
         });
       }
@@ -915,10 +977,18 @@
     margin-top: 30px;
   }
   th,td{
-    padding: 5px 20px;
-    font-size: 1.5em;
+    padding: 5px 5px;
+    font-size: 1.2em;
     color: #003973;
   }
+
+  @media(min-width: 700px){
+    th,td{
+      padding: 5px 20px;
+      font-size: 1.5em;
+    }
+  }
+
   th{
     color:#898f92;
     font-size: 1em;
@@ -971,6 +1041,40 @@
   .warning{
     color:red;
     font-size: 1.5em;
+  }
+
+  .v-select{
+    min-width: 280px;
+    max-width: 300px;
+    /*max-width: 250px;*/
+    display: inline-block;
+  }
+
+  .v-select-block{
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 20px;
+
+  }
+  @media(min-width: 700px){
+    .v-select-block{
+      padding-left: 0;
+
+    }
+  }
+
+  label{
+    font-size: 1.3em;
+    color: #003973;
+  }
+
+  .instructions{
+    font-size: 1.2em;
+    color: #003973;
+  }
+
+  .instructions ol li{
+    list-style: initial;
   }
 
 </style>

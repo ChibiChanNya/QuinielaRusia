@@ -9,6 +9,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('./config/database');
 let auth = require('./routes/auth');
+let async = require('async');
 
 //Passport
 let passport = require('passport');
@@ -33,6 +34,7 @@ let users = require('./routes/users');
 let User = require('./models/user');
 let Prediction = require('./models/gameprediction');
 let GPrediction = require('./models/groupprediction');
+let SPrediction = require('./models/specialprediction');
 
 
 // API to handle Users
@@ -77,7 +79,7 @@ app.get('/api/matches/me', passport.authenticate('jwt', {session: false}), (req,
         return matches.find((m) => m.match_id == id);
     }
 
-    User.findOne({_id: user_id}, function (err, user) {
+    User.findOne({_id: user_id}, async function (err, user) {
         if (err) {
             console.log("error finding useer", err);
             res.json(matches);
@@ -89,84 +91,108 @@ app.get('/api/matches/me', passport.authenticate('jwt', {session: false}), (req,
                 res.json(matches);
             }
             else {
-                Prediction.find({user: user}, function (err, predictions) {
-                    if (err || predictions.length < 1) {
-                        console.log("User has no predictions or error fetcing em");
-                        res.json(matches);
-                    }
-                    else {
-                        predictions.forEach((item) => {
-                            let match = find_by_id(item.match_id);
+                let [predictions, specials] = await Promise.all([
+                    Prediction.find({user: user}).exec(),
+                    SPrediction.findOne({user: user}).exec(),
+                ]);
 
-                            if (match) {
-                                match.localScore = item.localScore;
-                                match.visitorScore = item.visitorScore;
-                            }
-                        });
-                        res.json(matches);
+                // const default_specials: {first_place: null, second_}
+
+                predictions.forEach((item) => {
+                    let match = find_by_id(item.match_id);
+
+                    if (match) {
+                        match.localScore = item.localScore;
+                        match.visitorScore = item.visitorScore;
                     }
                 });
+
+                const results = {matches: matches, specials: specials || {}};
+                res.json(results);
             }
         }
     });
 });
 
 
-app.post('/api/matches/save', passport.authenticate('jwt', {session: false}), (req, res) => {
-    let matches = req.body.matches;
-    let user_id = req.body.user_id;
-    let table = req.body.table;
-    User.findOne({_id: user_id}, function (err, user) {
-        if (err) {
-            console.log("error finding useer", err);
-        }
-        else {
+app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (req, res, next) => {
+
+    try{
+
+        let matches = req.body.matches;
+        let user_id = req.body.user_id;
+        let table = req.body.table;
+        let specials = req.body.specials;
+
+        User.findOne({_id: user_id}, async function (err, user) {
+            if (err) {
+                console.log("error finding useer", err);
+                return;
+            }
             if (!user) {
                 console.log("User not found!!!", err);
                 return;
             }
-            Prediction.deleteMany({user: user}, function (err, deleted) {
 
-                if (err) console.log("ERROR DELETING", error);
+            const [err1, err2] = await Promise.all([
+                Prediction.deleteMany({user: user}).exec(),
+                GPrediction.deleteMany({user: user}).exec(),
+                SPrediction.deleteMany({user: user}).exec()
+            ]);
 
-                let promises = matches.map((m) => {
-                    if (!m.match_id) {
-                        return;
-                    }
-                    return Prediction.create({
-                        user: user_id,
-                        match_id: m.match_id,
-                        localScore: m.localScore,
-                        visitorScore: m.visitorScore
-                    });
+            // if (err1) console.log("ERROR DELETING Match Predictions", err1);
+            // if (err2) console.log("ERROR DELETING Table Predictions", err2);
+
+
+            let promises_matches = matches.map((m) => {
+                if (!m.match_id) {
+                    return;
+                }
+                return Prediction.create({
+                    user: user_id,
+                    match_id: m.match_id,
+                    localScore: m.localScore,
+                    visitorScore: m.visitorScore
                 });
-                Promise.all(promises).then(function (results) {
+            });
 
-                    GPrediction.deleteMany({user: user}, function (err, deleted) {
-                        if (err) console.log("ERROR DELETING", error);
-                        let promises = table.map((t) => {
-                            if (!t.group) {
-                                console.log("NO GROUP");
-                                return;
-                            }
-                            return GPrediction.create({
-                                user: user_id,
-                                group: t.group,
-                                first_place: t.first_place,
-                                second_place: t.second_place,
-                                third_place: t.third_place,
-                                fourth_place: t.fourth_place,
-                            });
-                        });
-                        Promise.all(promises).then(function (results) {
-                            console.log("ALL DONES");
-                            res.status(200).send("OK");
-                        });
-                    });
+            let promises_table = table.map((t) => {
+                if (!t.group) {
+                    console.log("NO GROUP");
+                    return;
+                }
+                return GPrediction.create({
+                    user: user_id,
+                    group: t.group,
+                    first_place: t.first_place,
+                    second_place: t.second_place,
+                    third_place: t.third_place,
+                    fourth_place: t.fourth_place,
                 });
-            })
-        }
-    });
+            });
+
+            let special_prediction = SPrediction.create({
+                user: user_id,
+                first_place: specials.selected_1st,
+                second_place: specials.selected_2nd,
+                third_place: specials.selected_3rd,
+                fourth_place: specials.selected_4th,
+                goal_champion: specials.selected_goaler,
+            });
+
+            const all_promises = promises_matches.concat(promises_table).concat(special_prediction);
+
+            Promise.all(all_promises).then(function (results) {
+                console.log("ALL DONES", results);
+                res.status(200).send("OK");
+            });
+        });
+
+    } catch (err){
+        console.log(error);
+        next(error);
+    }
+
 });
 
 app.post('/api/payment', PaymentsController.checkoutPaypal);

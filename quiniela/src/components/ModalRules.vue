@@ -15,33 +15,42 @@
             <slot name="body">
               <h2>Fase de Grupos (48 Partidos)</h2>
               <ul>
-                <li>5 puntos por predicción de partido correcta (ganador o empate)</li>
-                <li>10 puntos por predicción de partido y marcador correcto</li>
-                <li>25 puntos por predicción del orden del grupo (8 grupos)</li>
+                <li><b>5 puntos</b> por predicción de partido correcta (ganador o empate)</li>
+                <li><b>10 puntos</b> por predicción de partido y marcador correcto</li>
+                <li><b>25 puntos</b> por predicción del orden del grupo (8 grupos)</li>
               </ul>
 
               <h2>Octavos de Final (8 Partidos)</h2>
               <ul>
-                <li>15 puntos por prediccion de partido correcta</li>
-                <li>30 puntos por predicción de partido y marcador correcto</li>
+                <li><b>15 puntos</b> por prediccion de partido correcta</li>
+                <li><b>30 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Cuartos de Final (4 Partidos)</h2>
               <ul>
-                <li>40 puntos por prediccion de partido correcta</li>
-                <li>80 puntos por predicción de partido y marcador correcto</li>
+                <li><b>40 puntos</b> por prediccion de partido correcta</li>
+                <li><b>80 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Semifinales</h2>
               <ul>
-                <li>75 puntos por prediccion de partido correcta</li>
-                <li>150 puntos por predicción de partido y marcador correcto</li>
+                <li><b>75 puntos</b> por prediccion de partido correcta</li>
+                <li><b>150 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Final</h2>
               <ul>
-                <li>150 puntos por prediccion de partido correcta</li>
-                <li>300 puntos por predicción de partido y marcador correcto</li>
+                <li><b>150 puntos</b> por prediccion de partido correcta</li>
+                <li><b>300 puntos</b> por predicción de partido y marcador correcto</li>
+              </ul>
+
+              <h2>Especiales</h2>
+              <ul>
+                <li><b>60 puntos</b> por Campeón Goleador</li>
+                <li><b>20 puntos</b> por Cuarto Lugar</li>
+                <li><b>40 puntos</b> por Tercer Lugar</li>
+                <li><b>60 puntos</b> por Subcampeón</li>
+                <li><b>80 puntos</b> por Campeón</li>
               </ul>
             </slot>
           </div>

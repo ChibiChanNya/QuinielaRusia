@@ -94,6 +94,22 @@ li{
   background-image: url("./assets/Interna/tab-active.png");
 }
 
+.tabs-component-tab:nth-child(n+9){
+  background-image: url("./assets/Interna/tab-big-inactive.png");
+  background-size: contain;
+  width: 120px;
+}
+
+.tabs-component-tab:nth-child(n+9)>a{
+  justify-content:  center;
+}
+
+.tabs-component-tab:nth-child(n+9).is-active{
+  background-image: url("./assets/Interna/tab-big-active.png");
+}
+
+
+
 .tabs-component-tab.is-disabled * {
   color: #cdcdcd;
   cursor: not-allowed !important;

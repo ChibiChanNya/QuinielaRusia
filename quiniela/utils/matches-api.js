@@ -41,9 +41,9 @@ function getPredictions() {
     });
 }
 
-function savePredictions(matches,table, userId){
+function savePredictions(matches,table,specials, userId){
   const url = `${BASE_URL}/api/matches/save`;
-  return axios.post(url, {matches:matches, table:table, user_id: userId}, {headers: {Authorization: getToken()}}).then(response => response.data)
+  return axios.post(url, {matches:matches, table:table, specials: specials, user_id: userId}, {headers: {Authorization: getToken()}}).then(response => response.data)
     .catch(e => {
       console.log(e);
       if (e.response.status === 401) {
