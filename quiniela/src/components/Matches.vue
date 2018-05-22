@@ -3,26 +3,30 @@
     <ModalRules v-if="showModal" @close="showModal = false"></ModalRules>
 
     <div class="header">
-      <router-link to="/"><img  src="../assets/Interna/logo-blanco.png"></router-link>
+      <a href="https://bindiva.com" style="top:3px" target="_blank"><img  src="../assets/Interna/logo-bindiva-blanco.png"></a>
+      <router-link to="/"><img class="central-logo" src="../assets/Interna/logo-blanco.png"></router-link>
+      <a href="https://futhub.com" target="_blank"><img  src="../assets/Interna/logo-futhub-blanco.png"></a>
     </div>
     <div class="header-russia">
       <img class="img-fluid" style="padding:10px" src="../assets/Interna/russia.png">
     </div>
-    <div style="margin-bottom: 1em">
-      <h1 class="russia-badge rules"><span>Bienvenido a la Quiniela</span></h1>
+    <div style="margin-bottom: 2em">
+      <h1 class="russia-badge instructions-badge"><span>Instrucciones</span></h1>
     </div>
-    <div class="instructions offset-md-3" style="margin-bottom: 3em; text-align:justify">
-      <h1>¡Participa!</h1>
-      <ol>
-        <li><b>1-</b> Llena todos los partidos de la primera fase con marcador.</li>
-        <li><b>2-</b> Completa los partidos y resultados de las finales.</li>
-        <li><b>3-</b> Predice quién será el campeón goleador del mundial.</li>
-        <li><b>4-</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
-        <li><b>5-</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
-      </ol>
-      <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
-      <p>Gracias por participar</p>
-      <p>- Equipo de Bindiva y Futhub</p>
+    <div class="row">
+      <div class="instructions offset-md-3 col-md-6" style="margin-bottom: 3em; ">
+        <h1>¡Participa!</h1>
+        <ol>
+          <li><b>1-</b> Llena todos los partidos de la primera fase con marcador.</li>
+          <li><b>2-</b> Completa los partidos y resultados de las finales.</li>
+          <li><b>3-</b> Predice quién será el campeón goleador del mundial.</li>
+          <li><b>4-</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
+          <li><b>5-</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
+        </ol>
+        <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
+        <p>Gracias por participar</p>
+        <p>- Equipo de Bindiva y Futhub</p>
+      </div>
     </div>
 
 
@@ -359,7 +363,7 @@
         <tab name="Octavos" v-if="octavos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
-              <span class="warning">Se toma el resultado final, después de penales.</span>
+              <div class="warning">Se toma el resultado final, después de penales. <b>(No hay empates)</b> </div>
               <component :is="octavos_ready"
                          v-for="match in finals.octavos"
                          :key="match.id"
@@ -373,7 +377,7 @@
         <tab name="Cuartos" v-if="cuartos_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
-              <span class="warning">Se toma el resultado final, después de penales.</span>
+              <span class="warning">Se toma el resultado final, después de penales. <b>(No hay empates)</b></span>
               <component :is="cuartos_ready"
                          v-for="match in finals.cuartos"
                          :key="match.id"
@@ -387,7 +391,7 @@
         <tab name="Semifinales" v-if="semis_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
-              <span class="warning">Se toma el resultado final, después de penales.</span>
+              <span class="warning">Se toma el resultado final, después de penales. <b>(No hay empates)</b></span>
               <component :is="semis_ready"
                          v-for="match in finals.semifinales"
                          :key="match.id"
@@ -401,7 +405,7 @@
         <tab name="Final" v-if="final_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
-              <span class="warning">Se toma el resultado final, después de penales.</span>
+              <span class="warning">Se toma el resultado final, después de penales. <b>(No hay empates)</b></span>
               <component :is="final_ready"
                          v-for="match in finals.final"
                          :key="match.id"
@@ -416,6 +420,8 @@
     </div>
 
     <h1 class="russia-badge rules" ><span>Predicciones Especiales</span></h1>
+    <br><br>
+    <span class="warning">Son adicionales a la quiniela principal </span>
     <div class="offset-md-3"  style="margin-top: 50px;margin-bottom:50px">
       <div class="form-group">
         <div class="v-select-block">
@@ -960,6 +966,7 @@
       else{
         getMatches().then((matches) => {
           this.setMatches(matches);
+          this.calculateTable();
         });
       }
       getTeams().then((teams) => {
@@ -1013,8 +1020,26 @@
     padding: 30px 0 20px 0;
   }
   .header-russia img{
-    max-height: 100px;
+    max-height: 80px;
   }
+
+  .header img {
+    max-width: 80px;
+  }
+  .header img.central-logo{
+    margin: 0 20px;
+  }
+
+  @media(min-width: 900px){
+    .header img{
+      max-width: 150px;
+    }
+
+    .header img.central-logo{
+      margin: 0 10vw;
+    }
+  }
+
 
   .btn.btn-lg{
     font-size: 1.5em;
@@ -1038,9 +1063,15 @@
     cursor: pointer;
   }
 
+  .russia-badge.instructions-badge{
+    background-image: url("../assets/Home/btn-join.png");
+    padding: 5px 60px;
+  }
+
   .warning{
     color:red;
     font-size: 1.5em;
+    padding: 0 1em;
   }
 
   .v-select{
@@ -1071,6 +1102,14 @@
   .instructions{
     font-size: 1.2em;
     color: #003973;
+    text-align: justify;
+    padding: 0 3em;
+
+  }
+
+  .instructions ol{
+    text-align: justify;
+    line-height: 2em;
   }
 
   .instructions ol li{

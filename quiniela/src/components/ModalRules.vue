@@ -108,6 +108,8 @@
     transition: all .3s ease;
     font-family: centrale, sans-serif;
     color: #003973;
+    max-height: 90vh;
+    overflow-y: scroll;
   }
 
   @media(min-width: 700px){
