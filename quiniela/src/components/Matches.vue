@@ -448,8 +448,6 @@
         <label class="col-md-4" for="champion-goaler">Campeón Goleador:</label> <vSelect id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
       </div>
     </div>
-    
-
 
 
     <div class="container">
