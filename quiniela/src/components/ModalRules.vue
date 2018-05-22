@@ -16,35 +16,47 @@
               <h2>Fase de Grupos (48 Partidos)</h2>
               <ul>
                 <li><b>5 puntos</b> por predicción de partido correcta (ganador o empate)</li>
-                <li><b>10 puntos</b> por predicción de partido y marcador correcto</li>
-                <li><b>25 puntos</b> por predicción del orden del grupo (8 grupos)</li>
+                <li><b>10 puntos</b> por predicción de marcador correcto</li>
+                <li><b>25 puntos</b> por predicción del orden exácto de cada grupo (8 grupos)</li>
               </ul>
 
               <h2>Octavos de Final (8 Partidos)</h2>
               <ul>
-                <li><b>15 puntos</b> por prediccion de partido correcta</li>
-                <li><b>30 puntos</b> por predicción de partido y marcador correcto</li>
+                <li><b>15 puntos</b> por prediccion de partido y posición correcta</li>
+                <li><b>12 puntos</b> por predicción de ganador</li>
+                <li><b>18 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Cuartos de Final (4 Partidos)</h2>
               <ul>
-                <li><b>40 puntos</b> por prediccion de partido correcta</li>
-                <li><b>80 puntos</b> por predicción de partido y marcador correcto</li>
+                <li><b>40 puntos</b> por prediccion de partido correcta y posición correcta</li>
+                <li><b>30 puntos</b> por predicción de ganador</li>
+                <li><b>50 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Semifinales</h2>
               <ul>
-                <li><b>75 puntos</b> por prediccion de partido correcta</li>
-                <li><b>150 puntos</b> por predicción de partido y marcador correcto</li>
+                <li><b>75 puntos</b> por prediccion de partido correcta y posición correcta</li>
+                <li><b>60 puntos</b> por predicción de ganador</li>
+                <li><b>90 puntos</b> por predicción de partido y marcador correcto</li>
+              </ul>
+
+              <h2>Tercer Lugar</h2>
+              <ul>
+                <li><b>25 puntos</b> por prediccion de partido correcta y posición correcta</li>
+                <li><b>20 puntos</b> por predicción de ganador</li>
+                <li><b>30 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Final</h2>
               <ul>
-                <li><b>150 puntos</b> por prediccion de partido correcta</li>
-                <li><b>300 puntos</b> por predicción de partido y marcador correcto</li>
+                <li><b>150 puntos</b> por prediccion de partido correcta y posición correcta</li>
+                <li><b>120 puntos</b> por predicción de ganador</li>
+                <li><b>180 puntos</b> por predicción de partido y marcador correcto</li>
               </ul>
 
               <h2>Especiales</h2>
+              <p>Estos resultados pueden variar de tu quiniela principal en caso de que quieras hacer una estrategia para tener más posibilidades de ganar puntos</p>
               <ul>
                 <li><b>60 puntos</b> por Campeón Goleador</li>
                 <li><b>20 puntos</b> por Cuarto Lugar</li>
@@ -52,6 +64,12 @@
                 <li><b>60 puntos</b> por Subcampeón</li>
                 <li><b>80 puntos</b> por Campeón</li>
               </ul>
+              <br>
+              <p><b>Nota:</b> En caso de que algún partido de las finales se de en una posición diferente, este <b>no contará para puntos.</b></p>
+              <p>Ejemplo :</p>
+              <p>Octavos de final:
+              <p><b>Predicción</b> – Brasil 1E vs México 2F</p>
+              <p><b>Posición</b> – Brasil 2E vs México 1F</p>
             </slot>
           </div>
 

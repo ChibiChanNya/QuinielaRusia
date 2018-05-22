@@ -152,7 +152,9 @@ app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (
                     user: user_id,
                     match_id: m.match_id,
                     localScore: m.localScore,
-                    visitorScore: m.visitorScore
+                    visitorScore: m.visitorScore,
+                    localTeam: m.localTeam,
+                    visitorTeam: m.visitorTeam,
                 });
             });
 
@@ -183,13 +185,13 @@ app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (
             const all_promises = promises_matches.concat(promises_table).concat(special_prediction);
 
             Promise.all(all_promises).then(function (results) {
-                console.log("ALL DONES", results);
+                // console.log("ALL DONES", results);
                 res.status(200).send("OK");
             });
         });
 
     } catch (err){
-        console.log(error);
+        console.log("ERROR AT THE END",error);
         next(error);
     }
 

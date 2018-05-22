@@ -4,10 +4,10 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let MatchPredictionSchema = Schema({
-    user: {type: Schema.ObjectId, ref: 'User', index:true, required:true},
+    user: {type: Schema.ObjectId, ref: 'User', index: true, required: true},
     match_id: {type: Number, required:true },
-    // localTeam: {type: Number},
-    // visitorTeam: {type: Number},
+    localTeam: {type: String},
+    visitorTeam: {type: String},
     localScore: {type: Number},
     visitorScore: {type: Number},
 });

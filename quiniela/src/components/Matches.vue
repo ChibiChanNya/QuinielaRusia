@@ -402,10 +402,18 @@
           </div>
         </tab>
 
-        <tab name="Final" v-if="final_ready">
+        <tab name="Finales" v-if="final_ready">
           <div class="row">
             <div class="offset-md-3 col-md-6">
               <span class="warning">Se toma el resultado final, después de penales. <b>(No hay empates)</b></span>
+              <h2> Tercer Lugar </h2>
+              <component :is="final_ready"
+                         v-for="match in finals.tercer"
+                         :key="match.id"
+                         :match="match"
+                         @match-change="onMatchChange(match.id, $event)"
+              ></component>
+              <h2> Gran Final </h2>
               <component :is="final_ready"
                          v-for="match in finals.final"
                          :key="match.id"
@@ -718,6 +726,15 @@
 
       },
 
+      get_loser(match){
+        if(match.localScore > match.visitorScore)
+          return match.visitor_team;
+        else if(match.localScore < match.visitorScore)
+          return match.localTeam;
+        else return match.visitor_team;
+
+      },
+
       generate_octavos(){
 
         // console.log("Generating Octavos");
@@ -798,6 +815,10 @@
         final1.local_team = this.get_winner(this.finals.semifinales[0]);
         final1.visitor_team = this.get_winner(this.finals.semifinales[1]);
 
+        let tercer1 = this.finals.tercer[0];
+        tercer1.local_team = this.get_loser(this.finals.semifinales[0]);
+        tercer1.visitor_team = this.get_loser(this.finals.semifinales[1]);
+
         this.final_ready="Match";
         // console.log("final", final1);
 
@@ -864,7 +885,8 @@
             match_id: m.match_id,
             localScore: m.localScore,
             visitorScore: m.visitorScore,
-            winner: this.get_winner(m)
+            visitorTeam: m.visitor_team,
+            localTeam: m.local_team,
             }
           }, this);
 
@@ -951,7 +973,7 @@
 
       if(localStorage.getItem('has_paid') === "true"){
         getPredictions().then((predictions) => {
-          console.log("PRED", predictions);
+          // console.log("PRED", predictions);
           this.setMatches(predictions.matches);
           this.specials = {
             selected_1st: predictions.specials.first_place,
@@ -971,6 +993,7 @@
       }
       getTeams().then((teams) => {
         this.setTeams(teams);
+        this.calculateTable();
       })
 
     },

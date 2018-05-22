@@ -12,13 +12,12 @@
       <router-link class="btn btn-join btn-lg" to="/matches"><span>INSCRÍBETE AHORA</span></router-link>
 
       <p>Inscripción: $500.00 MXN por participante</p>
-      <p>80 participantes garantizados </p>
-      <p>$32,000.00 MXN en premios<span class="asterisk">&#x2731;</span></p>
-      <p>Se premiará al 20% de los ganadores<span class="asterisk">&#x2731;</span></p>
-      <br>
       <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
+      <p>Premio mínimo garantizado a repartir: $32,000.00 MXN*<span class="asterisk">&#x2731;</span></p>
+      <br>
 
       <h3>Premios en porcentaje del total acumulado:</h3>
+      <p>Se premiará al 20% de los ganadores</p>
       <ul>
         <li>1er Lugar: 40%</li>
         <li>2do Lugar: 20%</li>

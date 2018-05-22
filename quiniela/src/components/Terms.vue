@@ -34,11 +34,9 @@
 
       <h2>5. QUIENES SE PUEDEN INSCRIBIR.</h2>
 
-      <p>Puedes hacer uso de la plataforma QUINIELASPORTS.COM y los servicios disponibles únicamente personas mayores de edad, a través de invitación otorgada por el organizador del evento, a través de medios físicos y electrónicos que para tal fin disponga BINDIVA, S.A de C.V. </p>
+      <p>Puedes hacer uso de la plataforma QUINIELASPORTS.COM y los servicios disponibles únicamente personas mayores de edad, a través de invitación otorgada por el organizador del evento, a través de medios físicos y electrónicos que para tal fin disponga BINDIVA, S.A de C.V.</p>
 
-      <p>El registro y participación en la plataforma tiene un costo de $500.00 (Quinientos pesos 00/10 M.N.) que deberán ser cubiertos al momento del registro mediante la plataforma digital de Quiniela Sports, al generar tu registro y pagar tu cuota de registro  aceptas el contenido de nuestros TÉRMINOS Y CONDICIONES, así como de nuestro AVISO DE PRIVACIDAD.</p>
-
-      <p>Al realizar el registro debes ingresar tu nombre y apellidos completos, así como una dirección de correo electrónico válida; junto con fotografía de perfil. Quiniela Sport, podrá solicitarte la documentación que estime pertinente para acreditar dicha identidad.</p>
+      <p>El registro y participación en la plataforma tiene un costo de $500.00 (Quinientos pesos 00/10 M.N.) que deberán ser cubiertos al momento del registro mediante la plataforma digital de Quiniela Sports, al generar tu registro y pagar tu cuota de registro  aceptas el contenido de nuestros TÉRMINOS Y CONDICIONES, así como de nuestro AVISO DE PRIVACIDAD.</p>
 
       <h2>6. LINEAMIENTOS</h2>
       <ul>
