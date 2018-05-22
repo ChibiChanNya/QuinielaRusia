@@ -57,6 +57,10 @@ app.get('/api/teams', (req, res) => {
 
 app.get('/api/matches/all', passport.authenticate('jwt', {session: false}), (req, res) => {
     let matches = data.matches;
+    matches.forEach((m)=>{
+        m.localScore=0;
+        m.visitorScore=0;
+    });
     res.json(matches);
 });
 
