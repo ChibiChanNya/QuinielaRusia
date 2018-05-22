@@ -2,7 +2,7 @@
   <div>
     <div class="login">
       <div class="screen">
-        <div class="row justify-content-md-center">
+        <div class="container">
           <h1>Iniciar Sesión</h1>
         </div>
 
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <Footer style="position:absolute;width: 100%;bottom: 0;"></Footer>
+      <Footer style=""></Footer>
     </div>
   </div>
 
@@ -78,6 +78,10 @@
     min-height: 100vh;
   }
 
+  .screen{
+    min-height: 60vh;
+  }
+
   #googleBtn {
     display: inline-block;
     background: white;
@@ -86,7 +90,7 @@
     border: thin solid #f1f1f1;
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
-    min-width: 300px;
+    max-width: 300px;
   }
 
   #googleBtn span.buttonText {
@@ -101,7 +105,7 @@
     border: thin solid #f5f5f5;
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
-    min-width: 300px;
+    max-width: 300px;
   }
 
   span.label {
@@ -137,7 +141,7 @@
 
   h1{
     margin-top: 50px;
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .btn-group-lg{
     margin-top: 50px;
@@ -147,9 +151,19 @@
     .screen{
       min-height: 600px;
     }
-  }
-  .screen{
-    min-height: 300px;
+    .footer{
+      position:absolute;width: 100%;bottom: 0;
+    }
+
+    #googleBtn{
+      min-width: 300px;
+      max-width: none;
+    }
+
+    #facebookBtn{
+      min-width: 300px;
+      max-width:none;
+    }
   }
 
 

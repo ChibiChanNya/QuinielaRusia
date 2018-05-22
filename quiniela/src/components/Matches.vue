@@ -991,7 +991,7 @@
 
   @media(min-width: 700px){
     th,td{
-      padding: 5px 20px;
+      padding: 5px 20px !important;
       font-size: 1.5em;
     }
   }
