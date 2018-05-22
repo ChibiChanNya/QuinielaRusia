@@ -4,7 +4,7 @@ let User = require('../models/user');
 
 
 paypal.configure({
-    mode: 'production', // Sandbox or live
+    mode: 'live', // Sandbox or live
     client_id: 'AY4_gNDEd9vez5TqnURWvzO0N5JmFZtspGD4XPe1B6nANrp5N7wJ430VKopRwc6gGhvvXpaOyMM-d7EL',
     client_secret: 'EERIkQCEC0xGmIrPNRWT9I9iys4ZZ_n48atrta1mZtkIXFbzGgrgMhRN30gi5_hhq6PoxabLJuZdIe4M'
 });
