@@ -3,8 +3,8 @@
     <ModalRules v-if="showModal" @close="showModal = false"></ModalRules>
 
     <div class="header">
-      <a href="https://bindiva.com" style="top:3px" target="_blank"><img  src="../assets/Interna/logo-bindiva-blanco.png"></a>
-      <router-link to="/"><img class="central-logo" src="../assets/Interna/logo-blanco.png"></router-link>
+      <a href="https://bindiva.com"  style="top:3px" target="_blank"><img  src="../assets/Interna/logo-bindiva-blanco.png"></a>
+      <router-link to="/"><img class="central-logo"  src="../assets/Interna/logo-blanco.png"></router-link>
       <a href="https://futhub.com" target="_blank"><img  src="../assets/Interna/logo-futhub-blanco.png"></a>
     </div>
     <div class="header-russia">
@@ -17,11 +17,11 @@
       <div class="instructions offset-md-3 col-md-6" style="margin-bottom: 3em; ">
         <h1>¡Participa!</h1>
         <ol>
-          <li><b>1-</b> Llena todos los partidos de la primera fase con marcador.</li>
-          <li><b>2-</b> Completa los partidos y resultados de las finales.</li>
-          <li><b>3-</b> Predice quién será el campeón goleador del mundial.</li>
-          <li><b>4-</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
-          <li><b>5-</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
+          <li><b>1.</b> Llena todos los partidos de la primera fase con marcador.</li>
+          <li><b>2.</b> Completa los partidos y resultados de las finales.</li>
+          <li><b>3.</b> Predice quién será el campeón goleador del mundial.</li>
+          <li><b>4.</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
+          <li><b>5.</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
         </ol>
         <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
         <p>Gracias por participar</p>
@@ -31,7 +31,7 @@
 
 
     <div style="margin-bottom: 3em">
-      <h1 class="russia-badge rules" id="show-modal" @click="showModal = true"><span>Ver esquema de Puntos</span></h1>
+      <h1 class="russia-badge rules" id="show-modal" @click="showModal = true"><span>Ver Esquema de Puntos</span></h1>
     </div>
     <h1 class="russia-badge"><span>Grupos</span></h1>
 
@@ -49,7 +49,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 col-xs-12 offset-xs-0 table" id="resultsA">
+            <div class="table" id="resultsA">
 
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
@@ -89,7 +89,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsB">
+            <div class="table" id="resultsB">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -128,7 +128,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsC">
+            <div class="table" id="resultsC">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -169,7 +169,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsD">
+            <div class="table" id="resultsD">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -210,7 +210,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsE">
+            <div class="table" id="resultsE">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -251,7 +251,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsF">
+            <div class="table" id="resultsF">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -292,7 +292,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsG">
+            <div class="table" id="resultsG">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -332,7 +332,7 @@
               ></component>
             </div>
 
-            <div class="offset-md-3 col-md-6 table" id="resultsH">
+            <div class="table" id="resultsH">
               <h1 class="russia-badge" style="padding: 15px 40px 10px;">Resultados</h1>
               <table>
                 <tr>
@@ -430,31 +430,33 @@
     <h1 class="russia-badge rules" ><span>Predicciones Especiales</span></h1>
     <br><br>
     <span class="warning">Son adicionales a la quiniela principal </span>
-    <div class="offset-md-3"  style="margin-top: 50px;margin-bottom:50px">
-      <div class="form-group">
+    <div  style="margin-top: 50px;margin-bottom:50px;overflow:auto">
+      <div class="form-group offset-md-4 col-md-6 ">
         <div class="v-select-block">
-          <label class="col-xs-6 col-md-3" for="first-place">Campeón:</label><vSelect id="first-place"  v-model="specials.selected_1st" :options="team_names"></vSelect>
+          <label class=" col-md-4" for="first-place">Campeón:</label><vSelect id="first-place"  v-model="specials.selected_1st" :options="team_names"></vSelect>
         </div>
         <div class="v-select-block">
-          <label class="col-xs-6 col-md-3" for="second-place">Subcampeón:</label><vSelect id="second-place" v-model="specials.selected_2nd" :options="team_names"></vSelect>
+          <label class="col-md-4 " for="second-place">Subcampeón:</label><vSelect id="second-place" v-model="specials.selected_2nd" :options="team_names"></vSelect>
         </div>
         <div class="v-select-block">
-          <label class="col-xs-6 col-md-3" for="third-place">Tercer Lugar:</label><vSelect id="third-place" v-model="specials.selected_3rd" :options="team_names"></vSelect>
+          <label class="col-md-4" for="third-place">Tercer Lugar:</label><vSelect id="third-place" v-model="specials.selected_3rd" :options="team_names"></vSelect>
         </div>
         <div class="v-select-block">
-          <label class="col-xs-6 col-md-3" for="fourth-place">Cuarto Lugar:</label><vSelect id="fourth-place" v-model="specials.selected_4th" :options="team_names"></vSelect>
+          <label class="col-md-4" for="fourth-place">Cuarto Lugar:</label><vSelect id="fourth-place" v-model="specials.selected_4th" :options="team_names"></vSelect>
         </div>
         <div class="v-select-block">
-          <label class="col-xs-6 col-md-3" for="champion-goaler">Campeón Goleador:</label> <vSelect id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
+          <label class="col-md-4" for="champion-goaler">Campeón Goleador:</label> <vSelect id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
         </div>
       </div>
     </div>
 
 
-    <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
-    <!--<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>-->
-    <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
-    <!--<button  @click.stop="clear()" class="btn btn-lg btn-success">CLEAR</button>-->
+    <div class="container">
+      <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
+      <!--<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>-->
+      <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
+      <!--<button  @click.stop="clear()" class="btn btn-lg btn-success">CLEAR</button>-->
+    </div>
 
     <img src="../assets/Footer/separador.png" style="max-width: 100vw">
     <Footer style="margin-top: 0px"></Footer>
@@ -1031,12 +1033,16 @@
 
   #matches{
     background-image: url("../assets/Home/bg-white.png");
-    background-size: cover;
+    background-size: contain;
   }
 
   .table{
     margin-top: 50px;
+
   }
+
+  table{margin-left:auto;
+    margin-right:auto;}
 
 
   .header-russia{
@@ -1046,6 +1052,9 @@
     max-height: 80px;
   }
 
+  .header{
+
+  }
   .header img {
     max-width: 80px;
   }
@@ -1098,10 +1107,20 @@
   }
 
   .v-select{
-    min-width: 280px;
-    max-width: 300px;
+    /*min-width: 280px;*/
+    /*max-width: 180px;*/
     /*max-width: 250px;*/
-    display: inline-block;
+    width: 280px;
+    display: flex;
+  }
+
+  .dropdown-toggle input{
+    width: 5em;
+  }
+
+  .v-select.searchable .dropdown-toggle{
+    width: 100%;
+
   }
 
   .v-select-block{
@@ -1113,7 +1132,12 @@
   @media(min-width: 700px){
     .v-select-block{
       padding-left: 0;
-
+    }
+    .v-select{
+      max-width: 300px;
+    }
+    .dropdown-toggle input{
+      width: 10em;
     }
   }
 
@@ -1138,5 +1162,6 @@
   .instructions ol li{
     list-style: initial;
   }
+
 
 </style>

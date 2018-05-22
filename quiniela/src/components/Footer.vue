@@ -2,13 +2,13 @@
   <footer>
     <!--<img src="../assets/Footer/separador.png">-->
     <div class="row">
-      <img style="max-height: 150px" src="../assets/Footer/logo_quiniela.png">
+      <router-link to="/"><img style="max-height: 150px" src="../assets/Footer/logo_quiniela.png"></router-link>
     </div>
     <div class="row">
-      <img class="img-fluid" src="../assets/Footer/logo_bindiva.png">
-      <img class="img-fluid" src="../assets/Footer/logo_futhub.png">
+      <a href="https://bindiva.com" target="_blank"><img class="img-fluid" src="../assets/Footer/logo_bindiva.png"></a>
+      <a href="https://futhub.com" target="_blank"><img class="img-fluid" src="../assets/Footer/logo_futhub.png"></a>
     </div>
-    <div>
+    <div class="links">
       <router-link class="btn btn-link btn-sm" to="/terms">Términos y Condiciones</router-link>
       <router-link class="btn btn-link btn-sm" to="/privacy-policy">Aviso de Privacidad</router-link>
       <button class="btn btn-link log" v-show="isLoggedIn()" @click="handleLogout()">Cerrar Sesión </button>
@@ -52,5 +52,13 @@
 
   .btn.btn-link{
     font-size: 1.2em;
+  }
+
+  .links a, .links .btn-link{
+    color: #003973;
+  }
+
+  footer .row{
+    justify-content: space-around;
   }
 </style>

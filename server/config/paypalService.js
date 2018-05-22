@@ -4,9 +4,9 @@ let User = require('../models/user');
 
 
 paypal.configure({
-    mode: 'sandbox', // Sandbox or live
-    client_id: 'AXa7tZ6EUuladHZ7LeazvYj8DNFNzjIgXtkooGrLB1sjlpZMP6KNfGmKghkwyZia1yafqD6kcmN6tmJA',
-    client_secret: 'EMi1DEvh49sBAJs6PWIAZNHVGbs2FnwKVe5wKz-h8bkuTDvUv46Lbuf0LbRa3CqC3nphgJUjNUX-s1Gu'
+    mode: 'production', // Sandbox or live
+    client_id: 'AY4_gNDEd9vez5TqnURWvzO0N5JmFZtspGD4XPe1B6nANrp5N7wJ430VKopRwc6gGhvvXpaOyMM-d7EL',
+    client_secret: 'EERIkQCEC0xGmIrPNRWT9I9iys4ZZ_n48atrta1mZtkIXFbzGgrgMhRN30gi5_hhq6PoxabLJuZdIe4M'
 });
 module.exports = {
     paymentPaypal(paymentID,execute_payment_json,payment,user_id, cb){

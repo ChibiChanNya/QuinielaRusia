@@ -41,6 +41,7 @@
 
       let client = {
         sandbox: 'AXa7tZ6EUuladHZ7LeazvYj8DNFNzjIgXtkooGrLB1sjlpZMP6KNfGmKghkwyZia1yafqD6kcmN6tmJA',
+        production: 'AY4_gNDEd9vez5TqnURWvzO0N5JmFZtspGD4XPe1B6nANrp5N7wJ430VKopRwc6gGhvvXpaOyMM-d7EL'
       };
 
       let payment = (data, actions) => {
@@ -102,7 +103,7 @@
       };
 
       paypal.Button.render({
-        env: 'sandbox', // sandbox | production
+        env: 'production', // sandbox | production
         commit: true,
         funding:{
           allowed: [paypal.FUNDING.CREDIT]

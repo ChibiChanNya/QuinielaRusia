@@ -13,7 +13,7 @@
 
       <p>Inscripción: $500.00 MXN por participante</p>
       <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
-      <p>Premio mínimo garantizado a repartir: $32,000.00 MXN*<span class="asterisk">&#x2731;</span></p>
+      <p>Premio mínimo garantizado a repartir: $32,000.00 MXN<span class="asterisk">&#x2731;</span></p>
       <br>
 
       <h3>Premios en porcentaje del total acumulado:</h3>
@@ -25,7 +25,7 @@
         <li>4to Lugar: 7.5%</li>
         <li>5to Lugar en adelante: Se premiará acorde al número de participantes</li>
       </ul>
-      <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros.</p>
+      <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros</p>
 
       <router-link class="btn btn-join btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
 

@@ -2,6 +2,11 @@
   <div>
     <div class="login">
       <div class="screen">
+        <div class="header-blank">
+          <a href="https://bindiva.com" style="top:3px" target="_blank"><img  src="../assets/Interna/logo-bindiva-blanco.png"></a>
+          <router-link to="/"><img class="central-logo" src="../assets/Interna/logo-blanco.png"></router-link>
+          <a href="https://futhub.com" target="_blank"><img  src="../assets/Interna/logo-futhub-blanco.png"></a>
+        </div>
         <div class="container">
           <h1>Iniciar Sesión</h1>
         </div>
@@ -149,7 +154,7 @@
 
   @media (min-width: 700px) {
     .screen{
-      min-height: 600px;
+      /*min-height: 600px;*/
     }
     .footer{
       position:absolute;width: 100%;bottom: 0;
@@ -163,6 +168,23 @@
     #facebookBtn{
       min-width: 300px;
       max-width:none;
+    }
+  }
+
+  .header-blank img {
+    max-width: 80px;
+  }
+  .header-blank img.central-logo{
+    margin: 0 20px;
+  }
+
+  @media(min-width: 900px){
+    .header-blank img{
+      max-width: 150px;
+    }
+
+    .header-blank img.central-logo{
+      margin: 0 10vw;
     }
   }
 
