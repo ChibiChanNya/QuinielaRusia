@@ -103,7 +103,7 @@
       };
 
       paypal.Button.render({
-        env: 'production', // sandbox | production
+        env: process.env.PAYPAL_MODE, // sandbox | production
         commit: true,
         funding:{
           allowed: [paypal.FUNDING.CREDIT]
