@@ -15,6 +15,9 @@
       <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
       <p>Premio mínimo garantizado a repartir: $32,000.00 MXN<span class="asterisk">&#x2731;</span></p>
       <br>
+      <h1>¡Aún estás a tiempo, inscríbete!</h1>
+
+      <Countdown style="margin: 30px 0" end="June 14, 2018"></Countdown>
 
       <h3>Premios en porcentaje del total acumulado:</h3>
       <p>Se premiará al 20% de los ganadores</p>
@@ -40,11 +43,13 @@
 <script>
   import Footer from './Footer';
   import { isLoggedIn } from '../../utils/auth';
+  import Countdown from './Countdown'
 
   export default {
     name: 'Home',
     components: {
-      Footer
+      Footer,
+      Countdown
     },
     data() {
       return {

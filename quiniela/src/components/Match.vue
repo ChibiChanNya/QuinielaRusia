@@ -1,16 +1,16 @@
 <template>
   <div class="row match">
-    <div class="col-xs-4">
+    <div class="col-xs-4 no-padding">
       <img class="flag" v-bind:src='local_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='local',loser: winner ==='visitor'}">{{matchModel.local_team}}</span><br>
       <span class="score"><input min="0" max="99" v-model="matchModel.localScore" type="number"></span>
     </div>
-    <div class="col-xs-4 date-location">
+    <div class="col-xs-4 date-location no-padding">
       <div >{{matchModel.date}}-2018</div>
       <div >{{matchModel.time}} Hrs</div>
       <span >{{matchModel.location}}</span>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-4 no-padding">
       <img class="flag" v-bind:src='visitor_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='visitor',loser: winner ==='local'}">{{matchModel.visitor_team}}</span><br>
       <span class="score"><input min="0" max="99" v-model="matchModel.visitorScore" type="number"></span>
@@ -103,5 +103,9 @@
     width: 40px;
     text-align: center;
     padding-left: 5px;
+  }
+
+  .no-padding{
+    padding: 0;
   }
 </style>

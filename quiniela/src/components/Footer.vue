@@ -1,6 +1,5 @@
 <template>
   <footer>
-    <!--<img src="../assets/Footer/separador.png">-->
     <div class="row">
       <router-link to="/"><img style="max-height: 150px" src="../assets/Footer/logo_quiniela.png"></router-link>
     </div>
