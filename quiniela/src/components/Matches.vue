@@ -731,7 +731,7 @@
         if(match.localScore > match.visitorScore)
           return match.visitor_team;
         else if(match.localScore < match.visitorScore)
-          return match.localTeam;
+          return match.local_team;
         else return match.visitor_team;
 
       },
