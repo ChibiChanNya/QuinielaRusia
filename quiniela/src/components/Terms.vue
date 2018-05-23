@@ -10,27 +10,27 @@
 
       <p>Estimado usuario, agradecemos tu visita y te informamos que al acceder a nuestro plataforma y llenar los registros con tus datos personales, para hacer uso de la misma estás enterado de los términos y condiciones a los que estarás sujeto y los aceptas.</p>
 
-      <p>QUINIELASPORTS.COM ofrece una plataforma de quínelas enfocadas en eventos deportivos. Los siguientes Términos y Condiciones regulan el uso de todos los productos y servicios en línea</p>
+      <p>QUINIELASPORTS.COM ofrece una plataforma de quinielas enfocadas en eventos deportivos. Los siguientes Términos y Condiciones regulan el uso de todos los productos y servicios en línea</p>
 
       <h2>1. INTRODUCCIÓN</h2>
 
-      <p>Al registrarte para hacer uso de la plataforma  QUINIELASPORTS.COM, en adelante “Quiniela Sports”, quedarás sujeto a los lineamientos, restricciones y responsabilidades aquí citados para el uso de esta plataforma WEB, todos los demás sitios WEB que operan y pudieran operar bajo la dirección URL:  QUINIELASPORTS.COM.  Quiniela Sports, es un evento de carácter privado corporativo, organizado por BINDIVA, S.A de C.V. una agencia de comunicación estratégica con domicilio en Baja California #266 int. 401 Col. Hipódromo, México Distrito Federal, Código Postal 06100. </p>
+      <p>Al registrarte para hacer uso de la plataforma  QUINIELASPORTS.COM, en adelante “Quiniela Sports”, quedarás sujeto a los lineamientos, restricciones y responsabilidades aquí citados para el uso de esta plataforma WEB, todos los demás sitios WEB que operan y pudieran operar bajo la dirección URL:  QUINIELASPORTS.COM.  Quiniela Sports, es un evento de carácter privado corporativo, organizado por BINDIVA, S.A de C.V. una agencia de comunicación estratégica con domicilio en Baja California #266 int. 201 Col. Cuahutémoc, Ciudad de México, Código Postal 06100. </p>
 
       <p>BINDIVA, S.A de C.V se reserva el derecho de modificar el presente contenido en el momento y las circunstancias que a sus intereses convengan, siendo estos cambios vigentes en el momento mismo de su publicación.</p>
 
       <h2>2. ACEPTACIÓN DE TÉRMINOS Y CONDICIONES (TyC)</h2>
 
-      <p>Al registrarte con QUINIELASPORTS.COM, confirmas que has leído y comprendido el contenido y alcances los presentes términos y condiciones, en adelante “TyC”.</p>
+      <p>Al registrarte con QUINIELASPORTS.COM, confirmas que has leído y comprendido el contenido y alcances de los presentes términos y condiciones, en adelante “TyC”.</p>
 
       <h2>3. PRIVACIDAD</h2>
 
-      <p>Tu privacidad es muy importante para nosotros, al registrarte en QUINIELASPORTS.COM confirmas que has leído, comprendido y aceptado nuestro AVISO DE PRIVACIDAD</p>
+      <p>Tu privacidad es muy importante para nosotros, al registrarte en QUINIELASPORTS.COM confirmas que has leído, comprendido y aceptado nuestro AVISO DE PRIVACIDAD.</p>
 
       <h2>4. MODIFICACIONES A LOS TyC</h2>
 
-      <p>BINDIVA S.A. DE C.V. administrador del sitio se reserva el derecho de modificar el presente contenido en el momento y las circunstancias que a sus intereses convengan, siendo estos cambios vigentes en el momento mismo de su publicación. Las modificaciones al presente contenido, se considerarán aprobadas por nuestros usuarios, de no haber manifestado con anterioridad la cancelación de su relación Quiniela Sports, a través de la plataforma.</p>
+      <p>BINDIVA S.A. DE C.V. administrador del sitio se reserva el derecho de modificar el presente contenido en el momento y las circunstancias que a sus intereses convengan, siendo estos cambios vigentes en el momento mismo de su publicación. Las modificaciones al presente contenido, se considerarán aprobadas por nuestros usuarios, de no haber manifestado con anterioridad la cancelación de su relación con Quiniela Sports, a través de la plataforma.</p>
 
-      <p>En caso de haber solicitado la cancelación de la relación con Quiniela Sports a través del mecanismo destinado para este fin y habiendo sido aceptada la solicitud, los accesos y registros almacenados en la plataforma no podrán accederse y su uso quedará reservado para datos estadísticos y de registro ante Quiniela Sports </p>
+      <p>En caso de haber solicitado la cancelación de la relación con Quiniela Sports a través del mecanismo destinado para este fin y habiendo sido aceptada la solicitud, los accesos y registros almacenados en la plataforma no podrán accederse y su uso quedará reservado para datos estadísticos y de registro ante Quiniela Sports.</p>
 
       <h2>5. QUIÉNES SE PUEDEN INSCRIBIR</h2>
 
@@ -61,24 +61,24 @@
       <p>En el caso poco probable que nuestra plataforma no se encuentre disponible para tu acceso, los datos registrados se encuentran debidamente resguardados y encriptados para tu tranquilidad y seguridad.</p>
 
       <h2>10. PAGOS</h2>
-      <p>El registro y participación se pueden adquirir directamente en la plataforma QUINIELASPORTS.COM mediante la estructura prestado por el proveedor Operadora PayPal de México, S. de R.L. de C.V., para conocer las  políticas de privacidad del proveedor consulte directamente https://www.paypal.com/mx/webapps/mpp/ua/privacy-full</p>
-      <p>Al activar tu perfil con registro y pago de participación se te otorga la constancia de participar en la quínela.</p>
+      <p>El registro y participación se pueden adquirir directamente en la plataforma QUINIELASPORTS.COM mediante la estructura prestado por el proveedor Operadora PayPal de México, S. de R.L. de C.V., para conocer las  políticas de privacidad del proveedor consulte directamente <a href="https://www.paypal.com/mx/webapps/mpp/ua/privacy-full">https://www.paypal.com/mx/webapps/mpp/ua/privacy-full</a></p>
+      <p>Al activar tu perfil con registro y pago de participación se te otorga la constancia de participar en la quiniela.</p>
       <p>Las formas de pago que podrás encontrar para pagar tu participación son:</p>
       <ul>
         <li>Tarjetas de débito y crédito</li>
         <li>Cuenta PayPal</li>
       </ul>
 
-      <p>El pago se hará en una sola exhibición</p>
+      <p>El pago se hará en una sola exhibición.</p>
 
-      <p>Quiniela Sports se reserva el derecho de cancelación y política de no reembolso, por lo que  La cancelación de tu registro no es aplicable a un reembolso bajo ninguna circunstancia. </p>
+      <p>Quiniela Sports se reserva el derecho de cancelación y política de no reembolso, por lo que la cancelación de tu registro no es aplicable a un reembolso bajo ninguna circunstancia. </p>
 
       <h2>11. PREMIOS</h2>
-      <p>La entrega de premios se realizará se realizara en un tiempo máximo de una semana posterior al último partido del Mundial de Futbol Rusia 2018. Los ganadores serán dados a conocer a través de la plataforma QUINIELASPORTS.COM .</p>
+      <p>La entrega de premios se realizará en un tiempo máximo de una semana posterior al último partido del Mundial de Fútbol Rusia 2018. Los ganadores serán dados a conocer a través de la plataforma QUINIELASPORTS.COM.</p>
 
       <h2>12. LEGAL</h2>
-      <p>Todos los derechos de programas, servicios, procesos, software, tecnologías, características, invenciones, bases de datos y demás materiales pertenecientes a Quiniela Sports son propiedad exclusiva del organizador BINDIVA, S.A de C.V.. Se prohíbe el plagio o reproducción no autorizada de los programas, servicios, procesos, software, etc., para cualquier propósito.</p>
-      <p>Al transmitir contenido a través de la plataforma, otorga a BINDIVA, S.A de C.V. el derecho irrevocable y transferible, por tiempo indefinido y sin limitación de lugar, a reproducir, distribuir, publicar, mostrar, hacer accesible al público, alterar, traducir, transferir y almacenar el contenido. Para editar o dar forma al contenido, para adaptarlo a los formatos de archivo requeridos para su uso, o para alterar y/o mejorar su calidad de visualización. Este permiso de uso continuará más allá de la vigencia de los Términos, es decir, en el caso de que tu relación con Quiniela Sports se dé por terminada, ésta no está obligada a eliminar tu información de la plataforma QUINIELASPORTS.COM.</p>
+      <p>Todos los derechos de programas, servicios, procesos, software, tecnologías, características, invenciones, bases de datos y demás materiales pertenecientes a Quiniela Sports son propiedad exclusiva del organizador BINDIVA, S.A de C.V. Se prohíbe el plagio o reproducción no autorizada de los programas, servicios, procesos, software, etc., para cualquier propósito.</p>
+      <p>Al transmitir contenido a través de la plataforma, otorga a BINDIVA, S.A de C.V. el derecho irrevocable y transferible, por tiempo indefinido y sin limitación de lugar, a reproducir, distribuir, publicar, mostrar, hacer accesible al público, alterar, traducir, transferir y almacenar el contenido. Para editar o dar forma al contenido, para adaptarlo a los formatos de archivo requeridos para su uso, o para alterar y/o mejorar su calidad de visualización. Este permiso de uso continuará más allá de la vigencia de los Términos, es decir, en el caso que tu relación con Quiniela Sports se dé por terminada, esta no está obligada a eliminar tu información de la plataforma QUINIELASPORTS.COM.</p>
       <p>Todos los signos distintivos o aquellos que de conformidad con la Ley de la Propiedad Industrial puedan o estén protegidos por un registro de marca o un expediente de marca son propiedad exclusiva del organizador BINDIVA, S.A de C.V. y sus licenciantes. Los Contratos no le otorgan ningún derecho para usar las características de la marca QUINIELASPORTS.COM para fines comerciales o no comerciales.</p>
 
       <h2>13. RESPONSABILIDAD DE TERCEROS</h2>

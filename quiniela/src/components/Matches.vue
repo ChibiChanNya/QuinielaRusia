@@ -25,7 +25,7 @@
         </ol>
         <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
         <p>Gracias por participar</p>
-        <p>- Equipo de Bindiva y Futhub</p>
+        <p>Equipo de Bindiva y Futhub</p>
       </div>
     </div>
 

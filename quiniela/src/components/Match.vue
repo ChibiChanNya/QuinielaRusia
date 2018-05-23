@@ -7,7 +7,7 @@
     </div>
     <div class="col-xs-4 date-location no-padding">
       <div >{{matchModel.date}}-2018</div>
-      <div >{{matchModel.time}} Hrs</div>
+      <div >{{matchModel.time}} hrs</div>
       <span >{{matchModel.location}}</span>
     </div>
     <div class="col-xs-4 no-padding">
