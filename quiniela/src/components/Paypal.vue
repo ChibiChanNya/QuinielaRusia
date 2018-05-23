@@ -90,6 +90,7 @@
           this.$emit('payment-success');
 
         }).catch(err => {
+          console.log("err");
           this.error = true  // to display  the error message
         });
       };
