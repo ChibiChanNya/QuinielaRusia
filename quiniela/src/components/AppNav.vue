@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-default">
     <div class="navbar-header">
-      <router-link to="/" class="navbar-brand">Quiniela Rusia 2018</router-link>
+      <router-link to="/" class="navbar-brand">Quiniela Russia 2018</router-link>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li>

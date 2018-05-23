@@ -74,7 +74,7 @@
       <p>Quiniela Sports se reserva el derecho de cancelación y política de no reembolso, por lo que la cancelación de tu registro no es aplicable a un reembolso bajo ninguna circunstancia. </p>
 
       <h2>11. PREMIOS</h2>
-      <p>La entrega de premios se realizará en un tiempo máximo de una semana posterior al último partido del Mundial de Fútbol Rusia 2018. Los ganadores serán dados a conocer a través de la plataforma QUINIELASPORTS.COM.</p>
+      <p>La entrega de premios se realizará en un tiempo máximo de una semana posterior al último partido del Mundial de Fútbol Russia 2018. Los ganadores serán dados a conocer a través de la plataforma QUINIELASPORTS.COM.</p>
 
       <h2>12. LEGAL</h2>
       <p>Todos los derechos de programas, servicios, procesos, software, tecnologías, características, invenciones, bases de datos y demás materiales pertenecientes a Quiniela Sports son propiedad exclusiva del organizador BINDIVA, S.A de C.V. Se prohíbe el plagio o reproducción no autorizada de los programas, servicios, procesos, software, etc., para cualquier propósito.</p>

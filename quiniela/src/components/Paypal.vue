@@ -51,11 +51,11 @@
             transactions: [
               {
                 amount: {total: '500.00', currency: 'MXN'},
-                description: "Inscripcion a la Quiniela Rusia 2018",
+                description: "Inscripcion a la Quiniela Russia 2018",
                 item_list: {
                   items: [
                     {
-                      name: "Quiniela Mundial Rusia 2018",
+                      name: "Quiniela Mundial Russia 2018",
                       quantity: "1",
                       price: "500",
                       sku: "1",
