@@ -6,7 +6,7 @@
       <strong>Success!</strong> Pago completado exitosamente
     </div>
     <div v-if="error" class="alert alert-danger">
-      <strong>Ooops!</strong> Sucedió un error. Intenta nuevamente.
+      <strong>Ooops!</strong> Sucedió un error. No se te ha cobrado. Intena nuevamente o ponte en contacto con nosotros.
     </div>
   </div>
 </template>

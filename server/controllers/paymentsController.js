@@ -14,7 +14,7 @@ module.exports = {
         PaypalService.paymentPaypal(paymentID,execute_payment_json,payment,user_id, (err,result)=>{
             if(err){
                 console.log(err);
-                return;
+                res.status(500).send("Error en el pago, no se te ha cobrado");
             }
             console.log("PROCESS COMPLETE",result);
             User.findOneAndUpdate({_id: user_id}, {$set:{'profile.has_paid': true}}, function(err, user){
