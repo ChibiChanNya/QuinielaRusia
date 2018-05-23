@@ -29,7 +29,7 @@
 
       <router-link class="btn btn-join btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
 
-      <p><sub>Éste es un evento privado, la participación esta sujeta a invitación</sub></p>
+      <p><sub>Este es un evento privado, la participación está sujeta a invitación</sub></p>
 
     </div>
 
