@@ -15,6 +15,7 @@ if (passportConfig.clientID) {
         User.findOne({'auth.facebook_id': profile.id}, '_id profile.has_paid', function(err, user){
             console.log("ERROR?", err);
             console.log("CHECKING USER!", user);
+            console.log("FB PROFILE", profile);
 
             if (!user) {
                 // They don't, so register them
