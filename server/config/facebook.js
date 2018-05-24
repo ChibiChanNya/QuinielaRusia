@@ -23,7 +23,7 @@ if (passportConfig.clientID) {
                 User.create({
                     auth:{
                         facebook_id: profile.id,
-                        // email: profile.emails[0].value,
+                        email: profile.email,
                         provider: "facebook",
                     },
                     profile:{
@@ -39,9 +39,16 @@ if (passportConfig.clientID) {
                     return done(null, user);
                 })
             }
-            else{
-                return done(null, user);
-            }
+            else if(!user.auth.email){
+                    console.log("Updating Email", profile.email);
+                    user.auth.email = profile.email;
+                    user.save(function(err, updated){
+                        if(err) console.log("error updating email", err);
+                        return done(null, user);
+                    })
+                }
+                else return done(null, user);
+
         });
     }));
 }
