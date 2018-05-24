@@ -12,7 +12,7 @@ const passportConfig = {
 
 if (passportConfig.clientID) {
     passport.use(new passportFacebook.Strategy(passportConfig, function (accessToken, refreshToken, profile, done) {
-        User.findOne({'auth.facebook_id': profile.id}, '_id profile.has_paid', function(err, user){
+        User.findOne({'auth.facebook_id': profile.id}, '_id profile.has_paid email', function(err, user){
             console.log("ERROR?", err);
             console.log("CHECKING USER!", user);
             console.log("FB PROFILE", profile);
