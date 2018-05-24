@@ -39,9 +39,9 @@ if (passportConfig.clientID) {
                     return done(null, user);
                 })
             }
-            else if(!user.auth.email){
-                    console.log("Updating Email", profile.email);
-                    user.auth.email = profile.email;
+            else if(!user.auth.email && profile.emails.length){
+                    console.log("Updating Email", profile.emails);
+                    user.auth.email = profile.emails[0].value;
                     user.save(function(err, updated){
                         if(err) console.log("error updating email", err);
                         return done(null, user);
