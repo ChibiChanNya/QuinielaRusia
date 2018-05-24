@@ -7,7 +7,7 @@ const passportConfig = {
     clientID: process.env.FACEBOOK_CLIENTID,
     clientSecret: process.env.FACEBOOK_CLIENTSECRET,
     callbackURL: process.env.SERVER_URL+'/api/auth/facebook/redirect',
-    profileFields: ['id', 'displayName', 'photos', 'email']
+    profileFields: ['id', 'displayName', 'email']
 };
 
 if (passportConfig.clientID) {

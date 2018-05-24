@@ -66,7 +66,7 @@ router.get('/google/redirect',
     generateUserToken);
 
 router.get('/facebook/start',
-    passport.authenticate('facebook', { session: false }));
+    passport.authenticate('facebook', {scope:['email, displayName, id'], session: false }));
 router.get('/facebook/redirect',
     passport.authenticate('facebook', { session: false }),
     generateUserToken);
