@@ -25,7 +25,6 @@
           </b-button>
         </div>
       </div>
-
       <Footer style=""></Footer>
     </div>
   </div>
@@ -71,7 +70,13 @@
       },
 
     },
+    mounted(){
+      this.$nextTick(function () {
+        window.scrollTo(0, 0);
+      });
+    }
   }
+
 
 </script>
 <style scoped>
