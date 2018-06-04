@@ -998,6 +998,14 @@
       })
 
     },
+    mounted() {
+      fbq('track', 'ViewContent', {
+        content_name: 'Quiniela',
+        content_type: 'Product',
+        value: 500.00,
+        currency: 'MXN'
+      });
+    },
   };
 </script>
 

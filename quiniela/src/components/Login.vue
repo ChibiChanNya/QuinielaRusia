@@ -71,6 +71,9 @@
 
     },
     mounted(){
+        fbq('track', 'ViewContent', {
+          content_name: 'Login Page',
+        });
       this.$nextTick(function () {
         window.scrollTo(0, 0);
       });

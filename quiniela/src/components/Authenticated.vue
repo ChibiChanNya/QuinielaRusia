@@ -23,6 +23,13 @@ export default {
     }
   },
   mounted() {
+
+    fbq('track', 'CompleteRegistration', {
+      content_name: 'User Logged in',
+      status: 'Complete'
+    });
+
+
     this.authenticate();
   },
 }

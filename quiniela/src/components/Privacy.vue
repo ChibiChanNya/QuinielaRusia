@@ -72,6 +72,12 @@
     components: {
       Footer
     },
+
+    mounted() {
+      fbq('track', 'ViewContent', {
+        content_name: 'Privacy Policy',
+      });
+    },
   }
 </script>
 

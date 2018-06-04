@@ -109,6 +109,12 @@
     components: {
       Footer
     },
+
+    mounted() {
+      fbq('track', 'ViewContent', {
+        content_name: 'Terms and Conditions',
+      });
+    },
   }
 </script>
 

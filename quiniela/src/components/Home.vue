@@ -62,6 +62,9 @@
 
     },
     mounted() {
+      fbq('track', 'ViewContent', {
+        content_name: 'Landing Page',
+      });
     },
   };
 </script>

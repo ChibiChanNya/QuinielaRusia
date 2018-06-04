@@ -45,6 +45,14 @@
       };
 
       let payment = (data, actions) => {
+        //Record action in facebook Pixel
+        fbq('track', 'InitiateCheckout', {
+          currency: 'MXN',
+          value: 500.00,
+          content_name: "Quiniela Subscription",
+          type: 'Product'
+        });
+
         // Make a call to the REST api to create the payment
         return actions.payment.create({
           payment: {
@@ -87,6 +95,12 @@
           this.loading = false;
           this.success = true; // to display the success message
           localStorage.setItem('has_paid', 'true');
+          fbq('track', 'Purchase', {
+            currency: 'MXN',
+            value: 500.00,
+            content_name: "Quiniela Subscription",
+            type: "Product"
+          });
           this.$emit('payment-success');
 
         }).catch(err => {
