@@ -86,7 +86,13 @@
 
 <script>
     export default {
-        name: "ModalRules"
+        name: "ModalRules",
+
+      mounted(){
+        fbq('track', 'ViewContent', {
+          content_name: 'Modal Rules',
+        });
+      }
     }
 </script>
 
