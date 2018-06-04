@@ -6,7 +6,8 @@ let mongoose = require('mongoose');
 
 
 //Set up default mongoose connection
-let mongoDB = 'mongodb://admin:abcd1234@ds245337.mlab.com:45337/quiniela'; // Cloud
+// let mongoDB = 'mongodb://admin:abcd1234@ds245337.mlab.com:45337/quiniela'; // Cloud
+let mongoDB = process.env.MONGO_CONNECT;
 
 mongoose.Promise = global.Promise;
 
