@@ -581,17 +581,12 @@
           let winner= {};
           let loser = {};
 
-          // console.log("Match betwen ", local.name, " and ", visitor.name);
-
           visitor.goals += vs;
           visitor.goals_against += ls;
           local.goals += ls;
           local.goals_against += vs;
 
           if(ls === vs) {
-
-            // console.log("Ended in a draw");
-            // console.log(m);
 
             local.draws +=1;
             local.points +=1;

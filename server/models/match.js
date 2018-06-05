@@ -10,7 +10,8 @@ let MatchSchema = Schema({
     date: { type: Date, required: true, index: true},
     localScore: {type: Number, default: null},
     visitorScore: {type: Number, default: null},
-    type: {type: String}
+    type: {type: String},
+    group: {type: String}
 });
 
 
