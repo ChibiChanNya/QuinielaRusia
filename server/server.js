@@ -38,7 +38,7 @@ let SPrediction = require('./models/specialprediction');
 
 
 // API to handle Users
-// app.use('/api/users', users);
+app.use('/api/users', users);
 
 //Handle Passport stuff
 app.use('/api/auth', auth);
@@ -202,6 +202,7 @@ app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (
 });
 
 app.post('/api/payment', PaymentsController.checkoutPaypal);
+
 
 
 app.listen(3333);

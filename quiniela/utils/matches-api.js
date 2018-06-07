@@ -4,7 +4,7 @@ import Router from '../src/router/index.js';
 
 const BASE_URL = process.env.SERVER_URL;
 
-export {getMatches, getPredictions, savePredictions, getTeams};
+export {getMatches, getPredictions, savePredictions, getTeams, getUsers};
 
 function getMatches() {
 
@@ -51,5 +51,10 @@ function savePredictions(matches,table,specials, userId){
         alert("Tu login ha expirado");
       }
     });
+}
+
+function getUsers(){
+  const url = `${BASE_URL}/api/users/leaderboard`;
+  return axios.get(url).then(response => response.data);
 }
 

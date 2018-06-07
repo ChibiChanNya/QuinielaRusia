@@ -303,4 +303,31 @@ body {
   max-height: 100px;
 }
 
+.btn.btn-lg{
+  font-size: 1.5em;
+  background: #003973;
+  border-color: #898f92;
+}
+
+.russia-badge{
+  background-image: url("assets/Interna/badge-small.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: inline;
+  width: 150px;
+  padding: 15px 40px 15px 50px;
+}
+
+.russia-badge.rules{
+  background-image: url("assets/Home/btn-join.png");
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.russia-badge.instructions-badge{
+  background-image: url("assets/Home/btn-join.png");
+  padding: 5px 60px;
+}
+
 </style>

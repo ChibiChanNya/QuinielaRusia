@@ -6,6 +6,7 @@ import Authenticated from '@/components/Authenticated'
 import Home from '@/components/Home'
 import Privacy from '@/components/Privacy'
 import Terms from '@/components/Terms'
+import Leaderboard from '@/components/Leaderboard'
 
 Vue.use(Router);
 
@@ -42,6 +43,11 @@ export default new Router({
       name: 'Terms',
       component: Terms
     },
+    {
+      path: '/leaderboard',
+      name: 'Leaderboard',
+      component: Leaderboard
+    }
   ],
 
 
