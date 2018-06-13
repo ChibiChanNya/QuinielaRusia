@@ -7,20 +7,24 @@
     </div>
 
     <div style="margin: 2em">
-      <h1 class="russia-badge instructions-badge"><span>Resultados</span></h1>
+      <h1 class="russia-badge instructions-badge"><span>RESULTADOS</span></h1>
     </div>
-    <table>
-      <tr>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Puntos</th>
-      </tr>
-      <tr v-for="user in users">
-        <td>{{user.profile.display_name}}</td>
-        <td>{{user.auth.email}}</td>
-        <td>{{user.points}}</td>
-      </tr>
-    </table>
+    <h3>Lista de todos los participantes que completaron su inscripción y quiniela con sus puntos acumulados por predicciones correcta hasta el día de hoy.</h3>
+    <div id="table-wrapper" style="overflow-x:auto;">
+      <table>
+        <tr>
+          <th>NOMBRE</th>
+          <th>CORREO</th>
+          <th>PUNTOS</th>
+        </tr>
+        <tr v-for="user in users">
+          <td>{{user.profile.display_name}}</td>
+          <td>{{user.auth.email}}</td>
+          <td>{{user.points}}</td>
+        </tr>
+      </table>
+    </div>
+
 
     <img src="../assets/Footer/separador.png" style="max-width: 100vw">
     <Footer style="margin-top: 0px"></Footer>
@@ -80,11 +84,51 @@
     }
   }
 
+  tr>td:first-child{
+    max-width: 200px;
+  }
+
+  th:first-child{
+    border-top-left-radius: 6px;
+    /*border-bottom-left-radius: 6px;*/
+  }
+
+  th:last-child{
+    border-top-right-radius: 6px;
+    /*border-bottom-right-radius: 6px;*/
+  }
+
+  table{
+    margin: 50px auto;
+  }
+
+
+  tr th{
+    color: white;
+    background: rgb(175,37,41);
+    padding: 6px 20px;
+    text-align: center;
+  }
+
+  @media(max-width: 1024px){
+    tr th{
+      padding: 6px;
+    }
+    td{
+      max-width: 150px;
+      font-size: 0.7em;
+      word-wrap:break-word;
+    }
+  }
+
   tr{
     margin: 15px ;
     font-size: 1.5em;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
   }
   td{
-    padding: 0 10px;
+    padding: 10px 10px;
+    border-bottom: 2px solid rgba(136, 136, 136, 0.3);
+    color: rgb(70, 70, 70);
   }
 </style>

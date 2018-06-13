@@ -3,7 +3,7 @@
  */
 //Import the mongoose module
 let mongoose = require('mongoose');
-
+require('dotenv').config();
 
 //Set up default mongoose connection
 // let mongoDB = 'mongodb://admin:abcd1234@ds245337.mlab.com:45337/quiniela'; // Cloud

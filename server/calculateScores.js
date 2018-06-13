@@ -1,5 +1,6 @@
 require('dotenv').config();
-let Database = require('./config/database');
+
+require('./config/database');
 let Match = require('./models/match');
 let GamePrediction = require('./models/gameprediction');
 let GroupPrediction = require('./models/groupprediction');
@@ -63,6 +64,10 @@ function getScore(match, prediction){
         points += winner;
     else if(  match.localScore === match.visitorScore && prediction.localScore === prediction.visitorScore )
         points += winner;
+
+    //Debug for Chibi
+    if(prediction.user == "5b0465f74cd9eae80040ba7b")
+      console.log("USER", prediction.user, "GOT ", points, "points");
 
     return points;
 }
@@ -239,7 +244,7 @@ function assign_points(increases){
             }
         });
         async.series(promises, function(err, results){
-            console.log("Done", err, results);
+            console.log("Done", err);
             resolve('Resolved');
         })
     })
@@ -281,7 +286,7 @@ function finish(){
 }
 
 
-async.series([ clearPoints, calculateGroupsPoints, calculateMatchesPoints ], (res)=>{
-    console.log("100% Finishes", res);
+async.series([ clearPoints, /* calculateGroupsPoints,*/ calculateMatchesPoints ], (res)=>{
+    console.log("100% Finishes");
     finish();
 });

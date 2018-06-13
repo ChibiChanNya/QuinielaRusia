@@ -9,7 +9,7 @@
 
       <h1>Participa y gana con la primera quiniela digital que BINDIVA y FUTHUB crearon para ti</h1>
 
-      <router-link class="btn btn-join btn-lg" to="/matches"><span>INSCRÍBETE AHORA</span></router-link>
+      <router-link class="btn btn-join" to="/matches"><span>INSCRÍBETE AHORA</span></router-link>
 
       <p>Inscripción: $500.00 MXN por participante</p>
       <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
@@ -30,7 +30,7 @@
       </ul>
       <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros</p>
 
-      <router-link class="btn btn-join btn-lg" to="/matches">INSCRÍBETE AHORA</router-link>
+      <router-link class="btn btn-join" to="/matches">INSCRÍBETE AHORA</router-link>
 
       <p><sub>Este es un evento privado, la participación está sujeta a invitación</sub></p>
 

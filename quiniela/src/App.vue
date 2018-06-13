@@ -330,4 +330,8 @@ body {
   padding: 5px 60px;
 }
 
+.disabled{
+  cursor: not-allowed;
+}
+
 </style>
