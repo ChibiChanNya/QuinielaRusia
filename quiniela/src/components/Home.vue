@@ -13,16 +13,13 @@
       <h1 style="color:red;text-shadow:0 0 1px #000">Inscripciones cerradas</h1>
 
 
-      <h3>Premios en porcentaje del total acumulado:</h3>
-      <p>Se premiará al 20% de los ganadores</p>
+      <h3>Premios finales según el total acumulado:</h3>
       <ul>
-        <li>1er Lugar: 40%</li>
-        <li>2do Lugar: 20%</li>
-        <li>3er Lugar: 12.5%</li>
-        <li>4to Lugar: 7.5%</li>
-        <li>5to Lugar en adelante: Se premiará acorde al número de participantes</li>
+        <li>1er Lugar: $5,000 pesos</li>
+        <li>2do Lugar: $3,000 pesos</li>
+        <li>3er Lugar: $1,450 pesos</li>
+        <li>4to Lugar: $500 pesos</li>
       </ul>
-      <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros</p>
 
       <router-link class="btn btn-join" to="/matches" style="padding:0 40px;">Ver mi Quiniela</router-link>
 
