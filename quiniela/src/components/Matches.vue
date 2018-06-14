@@ -436,23 +436,14 @@
     </div>
 
 
-    <!--<div class="container">-->
-      <!--<paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>-->
-      <!--&lt;!&ndash;<button  @click.stop="calculateTable()" class="btn btn-lg btn-success">Calcular Tabla</button>&ndash;&gt;-->
-      <!--<button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>-->
-      <!--&lt;!&ndash;<button  @click.stop="clear()" class="btn btn-lg btn-success">CLEAR</button>&ndash;&gt;-->
-    <!--</div>-->
-
     <img src="../assets/Footer/separador.png" style="max-width: 100vw">
     <Footer style="margin-top: 0px"></Footer>
   </div>
 </template>
 
 <script>
-  import AppNav from './AppNav';
   import { isLoggedIn } from '../../utils/auth';
   import { getMatches, savePredictions , getTeams, getPredictions} from '../../utils/matches-api';
-  // import Paypal from './Paypal'
   import Footer from './Footer'
   import Match from './Match'
   import ModalRules from './ModalRules'
