@@ -20,7 +20,7 @@
         </tr>
         <tr v-for="user in users">
           <td>{{user.profile.display_name}}</td>
-          <td>{{user.auth.email}}</td>
+          <td>{{ user.auth.email}}</td>
           <td>{{user.points}}</td>
         </tr>
       </table>
@@ -53,6 +53,12 @@
     async created() {
       getUsers().then(users => {
         console.log(users);
+        users.forEach(function(user){
+          if(!user.auth){
+            user.auth = {};
+            user.auth.email = "";
+          }
+        });
         this.users = users;
       })
     }

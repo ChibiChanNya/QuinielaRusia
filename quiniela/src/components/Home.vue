@@ -13,7 +13,7 @@
       <h1 style="color:red;text-shadow:0 0 1px #000">Inscripciones cerradas</h1>
 
 
-      <h3>Premios finales según el total acumulado:</h3>
+      <h3>premios calculados con base a 21 usuarios registrados y pagados:</h3>
       <ul>
         <li>1er Lugar: $5,000 pesos</li>
         <li>2do Lugar: $3,000 pesos</li>
