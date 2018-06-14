@@ -9,7 +9,8 @@
     <div style="margin: 2em">
       <h1 class="russia-badge instructions-badge"><span>RESULTADOS</span></h1>
     </div>
-    <h3>Lista de todos los participantes que completaron su inscripción y quiniela con sus puntos acumulados por predicciones correcta hasta el día de hoy.</h3>
+    <h1>Tabla de puntos y posiciones</h1>
+    <h3>Esta tabla se actualizará cada día con los resultados de la quiniela</h3>
     <div id="table-wrapper" style="overflow-x:auto;">
       <table>
         <tr>

@@ -7,17 +7,11 @@
     <div class="content">
       <h1>Vive al máximo la copa mundial Russia 2018</h1>
 
-      <h1>Participa y gana con la primera quiniela digital que BINDIVA y FUTHUB crearon para ti</h1>
 
-      <router-link class="btn btn-join" to="/matches"><span>INSCRÍBETE AHORA</span></router-link>
+      <router-link class="btn btn-join" to="/leaderboard"><span>Tabla de Resultados</span></router-link>
 
-      <p>Inscripción: $500.00 MXN por participante</p>
-      <p>Inscripciones abiertas hasta el 13 de junio a las 23:59:59</p>
-      <p>Premio mínimo garantizado a repartir: $32,000.00 MXN<span class="asterisk">&#x2731;</span></p>
-      <br>
-      <h1>¡Aún estás a tiempo, inscríbete!</h1>
+      <h1 style="color:red;text-shadow:0 0 1px #000">Inscripciones cerradas</h1>
 
-      <Countdown style="margin: 30px 0" end="June 14, 2018"></Countdown>
 
       <h3>Premios en porcentaje del total acumulado:</h3>
       <p>Se premiará al 20% de los ganadores</p>
@@ -30,7 +24,7 @@
       </ul>
       <p><span class="asterisk">&#x2731;</span>Los premios se calcularán con base al número de participantes y se publicarán una vez cerrados los registros</p>
 
-      <router-link class="btn btn-join" to="/matches">INSCRÍBETE AHORA</router-link>
+      <router-link class="btn btn-join" to="/matches" style="padding:0 40px;">Ver mi Quiniela</router-link>
 
       <p><sub>Este es un evento privado, la participación está sujeta a invitación</sub></p>
 

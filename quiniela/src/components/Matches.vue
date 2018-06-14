@@ -10,25 +10,11 @@
     <div class="header-russia">
       <img class="img-fluid" style="padding:10px" src="../assets/Interna/russia.png">
     </div>
-    <div style="margin-bottom: 2em">
-      <h1 class="russia-badge instructions-badge"><span>Instrucciones</span></h1>
-    </div>
-    <div class="row">
-      <div class="instructions offset-md-3 col-md-6" style="margin-bottom: 3em; ">
-        <h1>¡Participa!</h1>
-        <ol>
-          <li><b>1.</b> Llena todos los partidos de la primera fase con marcador.</li>
-          <li><b>2.</b> Completa los partidos y resultados de las finales.</li>
-          <li><b>3.</b> Predice quién será el campeón goleador del mundial.</li>
-          <li><b>4.</b> Si quieres cambiar un resultado, puedes hacerlo hasta antes del 13 de junio a las 23:59:59.</li>
-          <li><b>5.</b> Para que tu quiniela se guarde en nuestro sistema, es necesario que hagas tu pago con cualquier tarjeta de crédito o Paypal.</li>
-        </ol>
-        <p>Para cualquier información, puedes contactarnos al correo info@bindiva.com</p>
-        <p>Gracias por participar</p>
-        <p>Equipo de Bindiva y Futhub</p>
-      </div>
-    </div>
 
+
+    <div style="margin-bottom: 3em">
+      <router-link to="/leaderboard"><h1 class="russia-badge rules" @click="showModal = true"><span>Ver Tabla de Resultados</span></h1></router-link>
+    </div>
 
     <div style="margin-bottom: 3em">
       <h1 class="russia-badge rules" id="show-modal" @click="showModal = true"><span>Ver Esquema de Puntos</span></h1>
