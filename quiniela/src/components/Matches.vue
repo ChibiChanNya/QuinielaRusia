@@ -435,7 +435,7 @@
       </div>
     </div>
 
-    <div class="container" v-if="user_visiting === '5b04a801194f162e08f5ec69'">
+    <div class="container">
 
       <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
       <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
