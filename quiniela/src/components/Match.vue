@@ -3,7 +3,7 @@
     <div class="col-xs-4 no-padding">
       <img class="flag" v-bind:src='local_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='local',loser: winner ==='visitor'}">{{matchModel.local_team}}</span><br>
-      <span class="score"><input disabled="disabled" class="disabled" min="0" max="99" v-model="matchModel.localScore" type="number"></span>
+      <span class="score"><input :disabled="matchModel.match_id < 14"  min="0" max="99" v-model="matchModel.localScore" type="number"></span>
     </div>
     <div class="col-xs-4 date-location no-padding">
       <div >{{matchModel.date}}-2018</div>
@@ -13,7 +13,7 @@
     <div class="col-xs-4 no-padding">
       <img class="flag" v-bind:src='visitor_flag_url'><br>
       <span class="country-name" v-bind:class="{winner: winner ==='visitor',loser: winner ==='local'}">{{matchModel.visitor_team}}</span><br>
-      <span class="score"><input disabled="disabled" class="disabled" min="0" max="99" v-model="matchModel.visitorScore" type="number"></span>
+      <span class="score"><input :disabled="matchModel.match_id < 14"  min="0" max="99" v-model="matchModel.visitorScore" type="number"></span>
     </div>
   </div>
 </template>

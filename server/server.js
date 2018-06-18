@@ -112,8 +112,91 @@ app.get('/api/matches/me', passport.authenticate('jwt', {session: false}), (req,
 
 app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (req, res, next) => {
 
-    res.status(500).send("Closed");
+  try{
+
+    let matches = req.body.matches;
+    let user_id = req.body.user_id;
+    let table = req.body.table;
+    let specials = req.body.specials;
+
+    User.findOne({_id: user_id}, async function (err, user) {
+      if (err) {
+        console.log("error finding useer", err);
+        return;
+      }
+      if (!user) {
+        console.log("User not found!!!", err);
+        return;
+      }
+
+      const [err1, err2] = await Promise.all([
+        Prediction.deleteMany({user: user}).exec(),
+        GPrediction.deleteMany({user: user}).exec(),
+        SPrediction.deleteMany({user: user}).exec()
+      ]);
+
+      // if (err1) console.log("ERROR DELETING Match Predictions", err1);
+      // if (err2) console.log("ERROR DELETING Table Predictions", err2);
+
+
+      let promises_matches = matches.map((m) => {
+        if (!m.match_id) {
+          return;
+        }
+        return Prediction.create({
+          user: user_id,
+          match_id: m.match_id,
+          localScore: m.localScore,
+          visitorScore: m.visitorScore,
+          localTeam: m.localTeam,
+          visitorTeam: m.visitorTeam,
+        });
+      });
+
+      let promises_table = table.map((t) => {
+        if (!t.group) {
+          console.log("NO GROUP");
+          return;
+        }
+        return GPrediction.create({
+          user: user_id,
+          group: t.group,
+          first_place: t.first_place,
+          second_place: t.second_place,
+          third_place: t.third_place,
+          fourth_place: t.fourth_place,
+        });
+      });
+
+      let special_prediction = SPrediction.create({
+        user: user_id,
+        first_place: specials.selected_1st,
+        second_place: specials.selected_2nd,
+        third_place: specials.selected_3rd,
+        fourth_place: specials.selected_4th,
+        goal_champion: specials.selected_goaler,
+      });
+
+      const all_promises = promises_matches.concat(promises_table).concat(special_prediction);
+
+      Promise.all(all_promises).then(function (results) {
+        // console.log("ALL DONES", results);
+        res.status(200).send("OK");
+      });
+    });
+
+  } catch (err){
+    console.log("ERROR AT THE END",error);
+    next(error);
+  }
+
 });
+
+
+// app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (req, res, next) => {
+//
+//     res.status(500).send("Closed");
+// });
 
 // app.post('/api/payment', PaymentsController.checkoutPaypal);
 

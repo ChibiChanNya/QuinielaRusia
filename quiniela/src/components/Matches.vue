@@ -419,22 +419,26 @@
 
     <div class="offset-md-4" style="margin-top:50px;margin-bottom:50px">
       <div class="v-select-block">
-        <label class=" col-md-4" for="first-place">Campeón:</label><vSelect disabled="disabled" id="first-place"  v-model="specials.selected_1st" :options="team_names"></vSelect>
+        <label class=" col-md-4" for="first-place">Campeón:</label><vSelect  id="first-place"  v-model="specials.selected_1st" :options="team_names"></vSelect>
       </div>
       <div class="v-select-block">
-        <label class="col-md-4 " for="second-place">Subcampeón:</label><vSelect disabled="disabled" id="second-place" v-model="specials.selected_2nd" :options="team_names"></vSelect>
+        <label class="col-md-4 " for="second-place">Subcampeón:</label><vSelect  id="second-place" v-model="specials.selected_2nd" :options="team_names"></vSelect>
       </div>
       <div class="v-select-block">
-        <label class="col-md-4" for="third-place">Tercer Lugar:</label><vSelect disabled="disabled" id="third-place" v-model="specials.selected_3rd" :options="team_names"></vSelect>
+        <label class="col-md-4" for="third-place">Tercer Lugar:</label><vSelect  id="third-place" v-model="specials.selected_3rd" :options="team_names"></vSelect>
       </div>
       <div class="v-select-block">
-        <label class="col-md-4" for="fourth-place">Cuarto Lugar:</label><vSelect disabled="disabled" id="fourth-place" v-model="specials.selected_4th" :options="team_names"></vSelect>
+        <label class="col-md-4" for="fourth-place">Cuarto Lugar:</label><vSelect  id="fourth-place" v-model="specials.selected_4th" :options="team_names"></vSelect>
       </div>
       <div class="v-select-block">
-        <label class="col-md-4" for="champion-goaler">Campeón Goleador:</label> <vSelect disabled="disabled" id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
+        <label class="col-md-4" for="champion-goaler">Campeón Goleador:</label> <vSelect  id="champion-goaler" v-model="specials.selected_goaler" :options="players"></vSelect>
       </div>
     </div>
 
+    <div class="container">
+      <paypal v-if="!premium" @payment-success="onPaymentComplete( $event)"></paypal>
+      <button v-if="premium"  @click.stop="saveChanges()" :disabled="loading" class="btn btn-lg btn-success">Actualizar Quiniela</button>
+    </div>
 
     <img src="../assets/Footer/separador.png" style="max-width: 100vw">
     <Footer style="margin-top: 0px"></Footer>
