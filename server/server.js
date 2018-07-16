@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 require('./config/database');
 let auth = require('./routes/auth');
 let async = require('async');
+let mongoose = require('mongoose');
 
 //Passport
 let passport = require('passport');
@@ -45,74 +46,117 @@ app.use('/api/auth', auth);
 
 
 app.get('/api/battles/public', (req, res) => {
-    let publicBattles = data.public_battles;
+  let publicBattles = data.public_battles;
 
-    res.json(publicBattles);
+  res.json(publicBattles);
 });
 
 app.get('/api/teams', (req, res) => {
-    let teams = data.teams;
-    res.json(teams);
+  let teams = data.teams;
+  res.json(teams);
 });
 
 app.get('/api/matches/all', passport.authenticate('jwt', {session: false}), (req, res) => {
-    let matches = data.matches;
-    matches.forEach((m)=>{
-        m.localScore=0;
-        m.visitorScore=0;
-    });
-    res.json(matches);
+  let matches = data.matches;
+  matches.forEach((m) => {
+    m.localScore = 0;
+    m.visitorScore = 0;
+  });
+  res.json(matches);
 });
 
 
 app.get('/api/matches/me', passport.authenticate('jwt', {session: false}), (req, res) => {
-    let matches = data.matches;
-    // Got predictions to work with.
-    let user_id = req.user._id;
+  let matches = data.matches;
+  // Got predictions to work with.
+  let user_id = req.user._id;
 
-    function find_by_id(id) {
-        return matches.find((m) => m.match_id == id);
+  function find_by_id(id) {
+    return matches.find((m) => m.match_id == id);
+  }
+
+  User.findOne({_id: user_id}, async function (err, user) {
+    if (err) {
+      console.log("error finding useer", err);
+      res.json(matches);
+
     }
+    else {
+      if (!user) {
+        console.log("User not found!!!", err);
+        res.json(matches);
+      }
+      else {
+        let [predictions, specials] = await Promise.all([
+          Prediction.find({user: user}).exec(),
+          SPrediction.findOne({user: user}).exec(),
+        ]);
 
-    User.findOne({_id: user_id}, async function (err, user) {
-        if (err) {
-            console.log("error finding useer", err);
-            res.json(matches);
+        // const default_specials: {first_place: null, second_}
 
-        }
-        else {
-            if (!user) {
-                console.log("User not found!!!", err);
-                res.json(matches);
-            }
-            else {
-                let [predictions, specials] = await Promise.all([
-                    Prediction.find({user: user}).exec(),
-                    SPrediction.findOne({user: user}).exec(),
-                ]);
+        predictions.forEach((item) => {
+          let match = find_by_id(item.match_id);
 
-                // const default_specials: {first_place: null, second_}
+          if (match) {
+            match.localScore = item.localScore;
+            match.visitorScore = item.visitorScore;
+          }
+        });
 
-                predictions.forEach((item) => {
-                    let match = find_by_id(item.match_id);
-
-                    if (match) {
-                        match.localScore = item.localScore;
-                        match.visitorScore = item.visitorScore;
-                    }
-                });
-
-                const results = {matches: matches, specials: specials || {}};
-                res.json(results);
-            }
-        }
-    });
+        const results = {matches: matches, specials: specials || {}};
+        res.json(results);
+      }
+    }
+  });
 });
 
+app.get('/api/matches/:id', (req, res) => {
+  let matches = data.matches;
+  // Got predictions to work with.
+  console.log("REQUESTED ID", req.params.id);
+  let user_id = mongoose.Types.ObjectId(req.params.id);
 
-app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (req, res, next) => {
+  function find_by_id(id) {
+    return matches.find((m) => m.match_id == id);
+  }
 
-  try{
+  User.findOne({_id: user_id}, async function (err, user) {
+    if (err) {
+      console.log("error finding useer", err);
+      res.json(matches);
+    }
+    else {
+      if (!user) {
+        console.log("User not found!!!", err);
+        res.json(matches);
+      }
+      else {
+        let [predictions, specials] = await Promise.all([
+          Prediction.find({user: user}).exec(),
+          SPrediction.findOne({user: user}).exec(),
+        ]);
+
+        // const default_specials: {first_place: null, second_}
+
+        predictions.forEach((item) => {
+          let match = find_by_id(item.match_id);
+
+          if (match) {
+            match.localScore = item.localScore;
+            match.visitorScore = item.visitorScore;
+          }
+        });
+
+        const results = {matches: matches, specials: specials || {}, name:user.profile.display_name};
+        res.json(results);
+      }
+    }
+  });
+});
+
+app.post('/api/matches/save', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+
+  try {
 
     let matches = req.body.matches;
     let user_id = req.body.user_id;
@@ -185,8 +229,8 @@ app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (
       });
     });
 
-  } catch (err){
-    console.log("ERROR AT THE END",error);
+  } catch (err) {
+    console.log("ERROR AT THE END", error);
     next(error);
   }
 
@@ -199,7 +243,6 @@ app.post('/api/matches/save', passport.authenticate('jwt', {session: false}),  (
 // });
 
 // app.post('/api/payment', PaymentsController.checkoutPaypal);
-
 
 
 app.listen(3333);

@@ -4,7 +4,7 @@ import Router from '../src/router/index.js';
 
 const BASE_URL = process.env.SERVER_URL;
 
-export {getMatches, getPredictions, savePredictions, getTeams, getUsers};
+export {getMatches, getPredictions, savePredictions, getTeams, getUsers, getPredictionsUser};
 
 function getMatches() {
 
@@ -20,6 +20,7 @@ function getMatches() {
       }
     });
 }
+
 
 function getTeams() {
   const url = `${BASE_URL}/api/teams`;
@@ -39,6 +40,12 @@ function getPredictions() {
         })
       }
     });
+}
+
+function getPredictionsUser(id) {
+
+  const url = `${BASE_URL}/api/matches/`+id;
+  return axios.get(url).then(response => response.data)
 }
 
 function savePredictions(matches,table,specials, userId){

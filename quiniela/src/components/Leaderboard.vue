@@ -7,10 +7,10 @@
     </div>
 
     <div style="margin: 2em">
-      <h1 class="russia-badge instructions-badge"><span>RESULTADOS</span></h1>
+      <h1 class="russia-badge instructions-badge"><span>RESULTADOS FINALES</span></h1>
     </div>
-    <h1>Tabla de puntos y posiciones</h1>
-    <h3>Esta tabla se actualizará cada día con los resultados de la quiniela</h3>
+    <h1>Tabla de puntos y posiciones finales</h1>
+    <h3>Da click en un usuario para ver su quiniela</h3>
     <div id="table-wrapper" style="overflow-x:auto;">
       <table>
         <tr>
@@ -18,7 +18,7 @@
           <th>CORREO</th>
           <th>PUNTOS</th>
         </tr>
-        <tr v-for="user in users">
+        <tr v-for="user in users" class='clickable-row' @click="viewBoard(user._id)">
           <td>{{user.profile.display_name}}</td>
           <td>{{ user.auth.email}}</td>
           <td>{{user.points}}</td>
@@ -48,7 +48,11 @@
     },
     components:{Footer},
 
-    methods: {},
+    methods: {
+      viewBoard(id){
+        window.location = "/matches/"+id;
+      }
+    },
 
     async created() {
       getUsers().then(users => {
@@ -61,11 +65,28 @@
         });
         this.users = users;
       })
+    },
+
+    mounted(){
+
     }
   }
 </script>
 
 <style scoped>
+
+  .clickable-row{
+    cursor:pointer;
+  }
+
+  .clickable-row:hover{
+    background: rgb(32,59,114);
+  }
+
+  .clickable-row:hover td{
+    color: white;
+  }
+
   #leaderboard {
     background-image: url("../assets/Home/bg-white.png");
     background-size: contain;

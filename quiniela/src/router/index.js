@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Matches from '@/components/Matches';
+import MatchesUser from '@/components/MatchesUser';
 import Login from '@/components/Login'
 import Authenticated from '@/components/Authenticated'
 import Home from '@/components/Home'
@@ -22,6 +23,11 @@ export default new Router({
       path: '/matches',
       name: 'Matches',
       component: Matches,
+    },
+    {
+      path: '/matches/:id',
+      name: 'MatchesUser',
+      component: MatchesUser,
     },
     {
       path: '/login',
